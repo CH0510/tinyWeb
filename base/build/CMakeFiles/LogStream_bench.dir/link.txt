@@ -1,0 +1,1 @@
+g++  -g -O2 -Wall -Werror -O2  -rdynamic CMakeFiles/LogStream_bench.dir/LogStream_bench.cc.o  -o bin/LogStream_bench   -L/home/chenhao/tinyWeb/base/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/base/./lib ../lib/libtinyWeb_base.a 

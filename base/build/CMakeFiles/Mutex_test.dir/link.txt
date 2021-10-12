@@ -1,0 +1,1 @@
+g++  -g -O2 -Wall -Werror -O2  -rdynamic CMakeFiles/Mutex_test.dir/Mutex_test.cc.o  -o bin/Mutex_test   -L/home/chenhao/tinyWeb/base/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/base/./lib ../lib/libtinyWeb_base.a -lpthread 

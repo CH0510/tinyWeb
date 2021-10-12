@@ -1,0 +1,1 @@
+g++  -g -Wall -Werror  -rdynamic CMakeFiles/logstream_bench.dir/LogStream_bench.cc.o  -o bin/logstream_bench   -L/home/chenhao/tinyWeb/base/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/base/./lib -lmuduo_base 

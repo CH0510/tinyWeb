@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/chenhao/tinyWeb/base/src/Timestamp.cc
+Types.h
+/home/chenhao/tinyWeb/base/src/Types.h
+Timestamp.h
+/home/chenhao/tinyWeb/base/src/Timestamp.h
+sys/time.h
+-
+ctime
+-
+inttypes.h
+-
+
+/home/chenhao/tinyWeb/base/src/Timestamp.h
+cstdint
+-
+utility
+-
+string
+-
+
+/home/chenhao/tinyWeb/base/src/Types.h
+cassert
+-
+

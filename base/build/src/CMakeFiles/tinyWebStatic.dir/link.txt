@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libtinyWeb.a  CMakeFiles/tinyWebStatic.dir/CountDownLatch.cc.o CMakeFiles/tinyWebStatic.dir/CurrentThread.cc.o CMakeFiles/tinyWebStatic.dir/FileUtil.cc.o CMakeFiles/tinyWebStatic.dir/Thread.cc.o CMakeFiles/tinyWebStatic.dir/Timestamp.cc.o
+/usr/bin/ranlib ../../lib/libtinyWeb.a

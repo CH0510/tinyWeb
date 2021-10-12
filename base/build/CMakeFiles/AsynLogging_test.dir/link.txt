@@ -1,0 +1,1 @@
+g++  -g -O2 -Wall -Werror -O2  -rdynamic CMakeFiles/AsynLogging_test.dir/AsynLogging_test.cc.o  -o bin/AsynLogging_test   -L/home/chenhao/tinyWeb/base/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/base/./lib ../lib/libtinyWeb.a -lpthread 

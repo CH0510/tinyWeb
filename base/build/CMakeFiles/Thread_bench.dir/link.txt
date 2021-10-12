@@ -1,0 +1,1 @@
+g++  -g -O2 -Wall -Werror -O2  -rdynamic CMakeFiles/Thread_bench.dir/Thread_bench.cc.o  -o bin/Thread_bench   -L/home/chenhao/tinyWeb/base/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/base/./lib ../lib/libtinyWeb_base.a -lpthread 
