@@ -42,7 +42,6 @@ int main(int argc, char** argv) {
   ::timerfd_settime(timerfd, 0, &howlong, NULL);
   tinyWeb::Thread t(threadFunc);
   t.start();
-
   loop.loop();
   channel.disableAll();
   channel.remove();
