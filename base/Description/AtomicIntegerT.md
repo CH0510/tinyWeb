@@ -1,0 +1,3 @@
+# AtomicIntegerT实现时的一些细节：
+- value_需使用 volatile 修饰，具体参考https://blog.csdn.net/weixin_44363885/article/details/92838607?spm=1001.2014.3001.5506 。因为多个线程会对该变量进行修改，为了防止编译器优化将其存入寄存器带来的问题。例如在 Thread 中的numCreated_,每个线程只会将value_加一,之后就会只读。此时编译器可能会将其优化到寄存器中。但是新线程会修改内存中numCreated_的值，而先前的线程仍读的是旧值。即缓存同步发生了问题。
+- 采用了gcc较新的内建原子操作，具体参考：https://gcc.gnu.org/onlinedocs/gcc-4.8.2/gcc/_005f_005fatomic-Builtins.html#_005f_005fatomic-Builtins
