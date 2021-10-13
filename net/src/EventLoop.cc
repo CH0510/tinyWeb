@@ -47,7 +47,8 @@ EventLoop::EventLoop() \
   : looping_(false), quit_(false), threadId_(CurrentThread::tid()), \
     poller_(Poller::newDefaultPoller(this)), eventHandling_(false), \
     currentChannel_(NULL), wakeupFd_(createWakeupFd()), \
-    wakeupFdChannel_(new Channel(this, wakeupFd_)) {
+    wakeupFdChannel_(new Channel(this, wakeupFd_)), \
+    callingPendingFunc_(false) {
   LOG_DEBUG << "EventLoop create " << this \
             << " in thread " << threadId_;
   if (t_loopInThisThread) {
@@ -97,6 +98,10 @@ void EventLoop::loop() {
     }
     currentChannel_ = NULL;
     eventHandling_ = false;
+
+    callingPendingFunc_ = true;
+    doPendingFunctors();
+    callingPendingFunc_ = false;
   }
 
   LOG_DEBUG << "EventLoop " << this  << " stop looping";
@@ -152,6 +157,40 @@ void EventLoop::wakeup() {
   if (n != sizeof a) {
     LOG_SYSERROR << "EventLoop::wakeup() write eventfd " \
                  << n << " byte instead of 8";
+  }
+}
+
+void EventLoop::runInLoop(const PendingFunctor& cb) {
+  if (isInLoopThread()) {
+    cb();
+  } else {
+    queueInLoop(cb);
+  }
+}
+
+void EventLoop::queueInLoop(const PendingFunctor& cb) {
+  {
+    MutexLockGuard lock(mutex_);
+    pendingFunctors_.push_back(cb);
+  }
+
+  // 需要唤醒I/O线程的场景
+  // 1. 非I/O线程调用
+  // 2. 当前正在执行回调函数
+  if (!isInLoopThread() || callingPendingFunc_) {
+    wakeup();
+  }
+}
+
+void EventLoop::doPendingFunctors() {
+  std::vector<PendingFunctor> pendingFunctors;
+  {
+    MutexLockGuard lock(mutex_);
+    pendingFunctors_.swap(pendingFunctors);
+  }
+
+  for (PendingFunctor& cb: pendingFunctors) {
+    cb();
   }
 }
 
