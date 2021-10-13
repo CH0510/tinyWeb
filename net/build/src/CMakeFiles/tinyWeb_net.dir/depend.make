@@ -4,6 +4,7 @@
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
@@ -14,7 +15,9 @@ src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: ../src/EventLoop.h
 
 src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
+src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
 src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: ../src/DefaultPoller.cc
@@ -26,6 +29,7 @@ src/CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o: ../src/Poller.h
 src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
 src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
 src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
@@ -40,6 +44,7 @@ src/CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o: ../src/Poller.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
@@ -53,6 +58,7 @@ src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/Poller.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
@@ -65,7 +71,9 @@ src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: ../src/PollPoller.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: ../src/Poller.h
 
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
+src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/EventLoop.h

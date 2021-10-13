@@ -22,9 +22,25 @@ void timeout(tinyWeb::Timestamp receiveTimer) {
   g_loop->quit();
 }
 
-void threadFunc() {
-  printf("wake up EventLoop!\n");
+void threadFunc1() {
+  printf("test wake up EventLoop!\n");
   g_loop->wakeup();
+}
+
+void print() {
+  printf("pid = %d, tid = %d\n", \
+          getpid(), tinyWeb::CurrentThread::tid());
+}
+
+void print2(int x) {
+  printf("pid = %d, tid = %d with x = %d\n", \
+         getpid(), tinyWeb::CurrentThread::tid(), x);
+}
+
+void threadFunc2() {
+  printf("test runInLoop!\n");
+  g_loop->runInLoop(print);
+  g_loop->runInLoop(std::bind(print2, 10));
 }
 
 int main(int argc, char** argv) {
@@ -38,10 +54,12 @@ int main(int argc, char** argv) {
 
   struct itimerspec howlong;
   bzero(&howlong, sizeof howlong);
-  howlong.it_value.tv_sec = 1;
+  howlong.it_value.tv_sec = 2;
   ::timerfd_settime(timerfd, 0, &howlong, NULL);
-  tinyWeb::Thread t(threadFunc);
-  t.start();
+  tinyWeb::Thread t1(threadFunc1);
+  tinyWeb::Thread t2(threadFunc2);
+  t1.start();
+  t2.start();
   loop.loop();
   channel.disableAll();
   channel.remove();
