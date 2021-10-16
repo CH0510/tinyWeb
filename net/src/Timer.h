@@ -12,6 +12,7 @@ namespace net {
 
 class TimerQueue;
 
+// 内部类，记录定时器的基本信息
 class Timer : public noncopyable {
  public:
   Timer(TimerQueue* timerQueue, TimerCallback cb, \
@@ -25,15 +26,22 @@ class Timer : public noncopyable {
   void run() {
     expireCallback_();
   }
-
-  void restart(Timestamp now);  // 重启定时器
+  // 重启定时器
+  // 使用者需保证由周期定时器发起
+  void restart(Timestamp now);
 
  private:
+  // 所属的定时队列
   TimerQueue* ownerQueue_;
+  // 超时回调
   TimerCallback expireCallback_;
+  // 超时时间，是一个time point
   Timestamp expireTime_;
+  // 定时器的周期，0.0表示是一次性定时器
   double interval_;
+  // 是否是周期定时器
   bool repeated_;
+  // 定时器的序列号
   int64_t sequence_;
 
   static AtomicInt64 numCreated_;
