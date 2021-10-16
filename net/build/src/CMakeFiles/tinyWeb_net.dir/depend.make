@@ -54,6 +54,8 @@ src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/EventLoop.cc
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/EventLoop.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/Poller.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/TimerId.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/TimerQueue.h
 
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
@@ -79,4 +81,30 @@ src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/EventLoop.h
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Poller.cc
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Poller.h
+
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: /home/chenhao/tinyWeb/base/src/Atomic.hpp
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: ../src/Timer.cc
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: ../src/Timer.h
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: ../src/TimerId.h
+src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: ../src/TimerQueue.h
+
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/Atomic.hpp
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/Channel.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/EventLoop.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/Timer.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/TimerId.h
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/TimerQueue.cc
+src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/TimerQueue.h
 

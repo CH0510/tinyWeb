@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named EventLoop_test04
+
+# Build rule for target.
+EventLoop_test04: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test04
+.PHONY : EventLoop_test04
+
+# fast build rule for target.
+EventLoop_test04/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/build
+.PHONY : EventLoop_test04/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test03
 
 # Build rule for target.
@@ -243,12 +256,40 @@ EventLoop_test03.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test03.dir/build.make CMakeFiles/EventLoop_test03.dir/EventLoop_test03.cc.s
 .PHONY : EventLoop_test03.cc.s
 
+EventLoop_test04.o: EventLoop_test04.cc.o
+
+.PHONY : EventLoop_test04.o
+
+# target to build an object file
+EventLoop_test04.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o
+.PHONY : EventLoop_test04.cc.o
+
+EventLoop_test04.i: EventLoop_test04.cc.i
+
+.PHONY : EventLoop_test04.i
+
+# target to preprocess a source file
+EventLoop_test04.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.i
+.PHONY : EventLoop_test04.cc.i
+
+EventLoop_test04.s: EventLoop_test04.cc.s
+
+.PHONY : EventLoop_test04.s
+
+# target to generate assembly for a file
+EventLoop_test04.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.s
+.PHONY : EventLoop_test04.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... EventLoop_test04"
 	@echo "... EventLoop_test03"
 	@echo "... edit_cache"
 	@echo "... EventLoop_test02"
@@ -264,6 +305,9 @@ help:
 	@echo "... EventLoop_test03.o"
 	@echo "... EventLoop_test03.i"
 	@echo "... EventLoop_test03.s"
+	@echo "... EventLoop_test04.o"
+	@echo "... EventLoop_test04.i"
+	@echo "... EventLoop_test04.s"
 .PHONY : help
 
 

@@ -11,6 +11,8 @@
 #include "../../base/src/Logging.h"
 #include "Poller.h"
 #include "Channel.h"
+#include "TimerQueue.h"
+#include "TimerId.h"
 
 namespace tinyWeb {
 namespace net {
@@ -46,7 +48,9 @@ IgnoreSigPipe g_ignoreSigPipe;
 EventLoop::EventLoop() \
   : looping_(false), quit_(false), threadId_(CurrentThread::tid()), \
     poller_(Poller::newDefaultPoller(this)), eventHandling_(false), \
-    currentChannel_(NULL), wakeupFd_(createWakeupFd()), \
+    currentChannel_(NULL), \
+    timerQueue_(new TimerQueue(this)), \
+    wakeupFd_(createWakeupFd()), \
     wakeupFdChannel_(new Channel(this, wakeupFd_)), \
     callingPendingFunc_(false) {
   LOG_DEBUG << "EventLoop create " << this \
@@ -192,6 +196,25 @@ void EventLoop::doPendingFunctors() {
   for (PendingFunctor& cb: pendingFunctors) {
     cb();
   }
+}
+
+// 定时任务相关函数
+TimerId EventLoop::runAt(const TimerCallback& cb, Timestamp timePoint) {
+  return timerQueue_->addTimer(cb, timePoint, 0.0);
+}
+
+TimerId EventLoop::runAfter(const TimerCallback& cb, double duration) {
+  return timerQueue_->addTimer(cb, addTime(Timestamp::now(), duration), 0.0);
+}
+
+TimerId EventLoop::runEvery(const TimerCallback& cb, \
+                         double duration, double interval) {
+  return timerQueue_->addTimer(cb, \
+                        addTime(Timestamp::now(), duration), interval);
+}
+
+void EventLoop::cancel(TimerId timer) {
+  timerQueue_->cancel(timer);
 }
 
 }  // namespace net
