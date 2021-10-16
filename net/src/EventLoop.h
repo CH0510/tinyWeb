@@ -12,6 +12,7 @@
 #include "../../base/src/CurrentThread.h"
 #include "../../base/src/Timestamp.h"
 #include "../../base/src/MutexLock.hpp"
+#include "../../base/src/Types.h"
 
 
 namespace tinyWeb {
@@ -19,6 +20,8 @@ namespace net {
 
 class Channel;
 class Poller;
+class TimerQueue;
+class TimerId;
 
 class EventLoop : public noncopyable {
  public:
@@ -60,6 +63,11 @@ class EventLoop : public noncopyable {
 
   void runInLoop(const PendingFunctor& cb);
 
+  TimerId runAt(const TimerCallback& cb, Timestamp timePoint);
+  TimerId runAfter(const TimerCallback& cb, double duration);
+  TimerId runEvery(const TimerCallback& cb, double duration, double interval);
+  void cancel(TimerId timer);
+
   static EventLoop* getEventLoopOfCurrentThread();
 
  private:
@@ -79,6 +87,8 @@ class EventLoop : public noncopyable {
   bool eventHandling_;
   Channel* currentChannel_;
   ChannelList activeChannels_;
+  // 定时任务
+  std::unique_ptr<TimerQueue> timerQueue_;
   // 用于唤醒阻塞的I/O线程使得任务立即得到执行
   const int wakeupFd_;
   std::unique_ptr<Channel> wakeupFdChannel_;

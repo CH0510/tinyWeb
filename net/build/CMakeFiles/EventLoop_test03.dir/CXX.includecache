@@ -79,6 +79,8 @@ string
 /home/chenhao/tinyWeb/base/src/Types.h
 cassert
 -
+functional
+-
 
 /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 
@@ -139,4 +141,6 @@ functional
 /home/chenhao/tinyWeb/base/src/Timestamp.h
 ../../base/src/MutexLock.hpp
 /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+../../base/src/Types.h
+/home/chenhao/tinyWeb/base/src/Types.h
 

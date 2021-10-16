@@ -1,5 +1,5 @@
 aux_source_directory(./ SRC_LIST)
-
+add_compile_options(-g)
 # 设置 库文件的默认输出路径
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
