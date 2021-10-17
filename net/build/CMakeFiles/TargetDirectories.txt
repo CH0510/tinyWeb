@@ -1,6 +1,7 @@
 /home/chenhao/tinyWeb/net/build/CMakeFiles/EventLoop_test04.dir
 /home/chenhao/tinyWeb/net/build/CMakeFiles/EventLoop_test03.dir
 /home/chenhao/tinyWeb/net/build/CMakeFiles/edit_cache.dir
+/home/chenhao/tinyWeb/net/build/CMakeFiles/EventLoop_test06.dir
 /home/chenhao/tinyWeb/net/build/CMakeFiles/EventLoop_test02.dir
 /home/chenhao/tinyWeb/net/build/CMakeFiles/rebuild_cache.dir
 /home/chenhao/tinyWeb/net/build/CMakeFiles/EventLoop_test01.dir
