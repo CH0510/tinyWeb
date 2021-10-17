@@ -87,7 +87,7 @@ void EventLoop::loop() {
   assert(!looping_);
   assertInLoopThread();
   looping_ = true;
-  LOG_DEBUG << "EventLoop " << this << " start looping";
+  LOG_INFO << "EventLoop " << this << " start looping";
 
   while (!quit_) {
     activeChannels_.clear();
@@ -108,7 +108,7 @@ void EventLoop::loop() {
     callingPendingFunc_ = false;
   }
 
-  LOG_DEBUG << "EventLoop " << this  << " stop looping";
+  LOG_INFO << "EventLoop " << this  << " stop looping";
   looping_ = false;
 }
 

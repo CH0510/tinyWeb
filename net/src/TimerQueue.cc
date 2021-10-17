@@ -179,17 +179,19 @@ std::vector<Timer*> TimerQueue::getAllExpired(Timestamp now) {
 // 将所有超时定时器中的周期定时器重新启动
 // 由于调用cancel而取消的定时器将不会在重新的启动
 // 
-void TimerQueue::reset(std::vector<Timer*>& expireTimerVec, Timestamp now) {
+bool TimerQueue::reset(std::vector<Timer*>& expireTimerVec, Timestamp now) {
   bool earliestChanged = false;
   for (Timer* timer : expireTimerVec) {
     if (timer->repeated() && \
         canceledSet_.find(timer) == canceledSet_.end()) {
       timer->restart(now);
-      earliestChanged = insert(timer) || earliestChanged;
+      earliestChanged |= insert(timer);
     } else {
       delete timer;
     }
   }
+
+  return earliestChanged;
 }
 
 void TimerQueue::handleRead() {

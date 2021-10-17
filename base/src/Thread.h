@@ -24,7 +24,7 @@ class Thread : public noncopyable {
   void start();
   int join();
   bool started() const { return started_; }
-  bool joined() {return joined_; }
+  bool joined() const {return joined_; }
   std::string name() const { return name_; }
   pid_t tid() const { return tid_; }
   pthread_t pthreadId() const { return pthreadId_; }

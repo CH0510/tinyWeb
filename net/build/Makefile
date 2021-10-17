@@ -137,6 +137,19 @@ EventLoop_test03/fast:
 .PHONY : EventLoop_test03/fast
 
 #=============================================================================
+# Target rules for targets named EventLoop_test06
+
+# Build rule for target.
+EventLoop_test06: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test06
+.PHONY : EventLoop_test06
+
+# fast build rule for target.
+EventLoop_test06/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/build
+.PHONY : EventLoop_test06/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test02
 
 # Build rule for target.
@@ -283,6 +296,33 @@ EventLoop_test04.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.s
 .PHONY : EventLoop_test04.cc.s
 
+EventLoop_test06.o: EventLoop_test06.cc.o
+
+.PHONY : EventLoop_test06.o
+
+# target to build an object file
+EventLoop_test06.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o
+.PHONY : EventLoop_test06.cc.o
+
+EventLoop_test06.i: EventLoop_test06.cc.i
+
+.PHONY : EventLoop_test06.i
+
+# target to preprocess a source file
+EventLoop_test06.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.i
+.PHONY : EventLoop_test06.cc.i
+
+EventLoop_test06.s: EventLoop_test06.cc.s
+
+.PHONY : EventLoop_test06.s
+
+# target to generate assembly for a file
+EventLoop_test06.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.s
+.PHONY : EventLoop_test06.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -292,6 +332,7 @@ help:
 	@echo "... EventLoop_test04"
 	@echo "... EventLoop_test03"
 	@echo "... edit_cache"
+	@echo "... EventLoop_test06"
 	@echo "... EventLoop_test02"
 	@echo "... rebuild_cache"
 	@echo "... EventLoop_test01"
@@ -308,6 +349,9 @@ help:
 	@echo "... EventLoop_test04.o"
 	@echo "... EventLoop_test04.i"
 	@echo "... EventLoop_test04.s"
+	@echo "... EventLoop_test06.o"
+	@echo "... EventLoop_test06.i"
+	@echo "... EventLoop_test06.s"
 .PHONY : help
 
 

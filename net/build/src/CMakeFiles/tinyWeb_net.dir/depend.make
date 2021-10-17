@@ -57,6 +57,20 @@ src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/Poller.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/TimerId.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o: ../src/TimerQueue.h
 
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Atomic.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Condition.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/CountDownLatch.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Thread.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/ThreadLocal.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoop.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoopThread.cc
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoopThread.h
+
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h

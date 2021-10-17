@@ -55,6 +55,7 @@ CMAKE_BINARY_DIR = /home/chenhao/tinyWeb/net/build
 # The main recursive "all" target.
 all: CMakeFiles/EventLoop_test04.dir/all
 all: CMakeFiles/EventLoop_test03.dir/all
+all: CMakeFiles/EventLoop_test06.dir/all
 all: CMakeFiles/EventLoop_test02.dir/all
 all: CMakeFiles/EventLoop_test01.dir/all
 all: src/all
@@ -69,6 +70,7 @@ preinstall: src/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/EventLoop_test04.dir/clean
 clean: CMakeFiles/EventLoop_test03.dir/clean
+clean: CMakeFiles/EventLoop_test06.dir/clean
 clean: CMakeFiles/EventLoop_test02.dir/clean
 clean: CMakeFiles/EventLoop_test01.dir/clean
 clean: src/clean
@@ -105,7 +107,7 @@ CMakeFiles/EventLoop_test04.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test04.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test04.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test04.dir/rule
@@ -132,7 +134,7 @@ CMakeFiles/EventLoop_test03.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test03.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test03.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test03.dir/rule
@@ -148,6 +150,33 @@ CMakeFiles/EventLoop_test03.dir/clean:
 .PHONY : CMakeFiles/EventLoop_test03.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/EventLoop_test06.dir
+
+# All Build rule for target.
+CMakeFiles/EventLoop_test06.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/depend
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=9,10 "Built target EventLoop_test06"
+.PHONY : CMakeFiles/EventLoop_test06.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/EventLoop_test06.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 12
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test06.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
+.PHONY : CMakeFiles/EventLoop_test06.dir/rule
+
+# Convenience name for target.
+EventLoop_test06: CMakeFiles/EventLoop_test06.dir/rule
+
+.PHONY : EventLoop_test06
+
+# clean rule for target.
+CMakeFiles/EventLoop_test06.dir/clean:
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/clean
+.PHONY : CMakeFiles/EventLoop_test06.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/EventLoop_test02.dir
 
 # All Build rule for target.
@@ -159,7 +188,7 @@ CMakeFiles/EventLoop_test02.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test02.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test02.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test02.dir/rule
@@ -186,7 +215,7 @@ CMakeFiles/EventLoop_test01.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test01.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test01.dir/rule
@@ -208,12 +237,12 @@ CMakeFiles/EventLoop_test01.dir/clean:
 src/CMakeFiles/tinyWeb_net.dir/all:
 	$(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/depend
 	$(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17 "Built target tinyWeb_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20 "Built target tinyWeb_net"
 .PHONY : src/CMakeFiles/tinyWeb_net.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/tinyWeb_net.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tinyWeb_net.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/tinyWeb_net.dir/rule
