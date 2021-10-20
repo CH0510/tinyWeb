@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libtinyWebNet.a  CMakeFiles/tinyWebNet.dir/EventLoop.cc.o
-/usr/bin/ranlib ../../lib/libtinyWebNet.a

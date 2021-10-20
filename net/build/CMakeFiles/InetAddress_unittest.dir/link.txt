@@ -1,1 +1,0 @@
-g++  -g -O2 -Wall -Werror  -rdynamic CMakeFiles/InetAddress_unittest.dir/InetAddress_unittest.cc.o  -o bin/InetAddress_unittest   -L/home/chenhao/tinyWeb/net/../base/lib  -L/home/chenhao/tinyWeb/net/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/net/../base/lib:/home/chenhao/tinyWeb/net/./lib -ltinyWeb_base ../lib/libtinyWeb_net.a -lpthread -lboost_unit_test_framework -ltinyWeb_base 

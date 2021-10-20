@@ -25,3 +25,6 @@ target_link_libraries(EventLoop_test04 tinyWeb_base tinyWeb_net pthread)
 
 add_executable(InetAddress_unittest InetAddress_unittest.cc)
 target_link_libraries(InetAddress_unittest tinyWeb_base tinyWeb_net pthread boost_unit_test_framework)
+
+add_executable(EventLoop_test06 EventLoop_test06.cc)
+target_link_libraries(EventLoop_test06 tinyWeb_base tinyWeb_net pthread)

@@ -69,7 +69,8 @@ class TimerQueue : public noncopyable {
   // 获取所有过期的定时器
   std::vector<Timer*> getAllExpired(Timestamp now);
   // 重置当前过期定时器中的循环定时器
-  void reset(std::vector<Timer*>&, Timestamp);
+  // 返回值用于指示是否需要进行调整超时时间
+  bool reset(std::vector<Timer*>&, Timestamp);
   // 定时器超时回调函数
   void handleRead();
 

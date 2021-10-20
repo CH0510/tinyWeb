@@ -6,8 +6,7 @@
 #include "src/EventLoop.h"
 #include "../base/src/Thread.h"
 #include "src/TimerId.h"
-#include "EventLoopThread.h"
-
+#include "src/EventLoopThread.h"
 using namespace tinyWeb;
 using namespace tinyWeb::net;
 
@@ -56,7 +55,7 @@ int main() {
   sleep(1);
   {
     EventLoopThread loopThread;
-    EventLoop* loop = loopThread.start();
+    EventLoop* loop = loopThread.startInLoop();
     loop->runAfter(printTid, 2);
     sleep(3);
     print("thread loop exits");
