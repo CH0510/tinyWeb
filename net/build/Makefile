@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named InetAddress_unittest
+
+# Build rule for target.
+InetAddress_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 InetAddress_unittest
+.PHONY : InetAddress_unittest
+
+# fast build rule for target.
+InetAddress_unittest/fast:
+	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/build
+.PHONY : InetAddress_unittest/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test04
 
 # Build rule for target.
@@ -283,12 +296,40 @@ EventLoop_test04.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.s
 .PHONY : EventLoop_test04.cc.s
 
+InetAddress_unittest.o: InetAddress_unittest.cc.o
+
+.PHONY : InetAddress_unittest.o
+
+# target to build an object file
+InetAddress_unittest.cc.o:
+	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/InetAddress_unittest.cc.o
+.PHONY : InetAddress_unittest.cc.o
+
+InetAddress_unittest.i: InetAddress_unittest.cc.i
+
+.PHONY : InetAddress_unittest.i
+
+# target to preprocess a source file
+InetAddress_unittest.cc.i:
+	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/InetAddress_unittest.cc.i
+.PHONY : InetAddress_unittest.cc.i
+
+InetAddress_unittest.s: InetAddress_unittest.cc.s
+
+.PHONY : InetAddress_unittest.s
+
+# target to generate assembly for a file
+InetAddress_unittest.cc.s:
+	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/InetAddress_unittest.cc.s
+.PHONY : InetAddress_unittest.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... InetAddress_unittest"
 	@echo "... EventLoop_test04"
 	@echo "... EventLoop_test03"
 	@echo "... edit_cache"
@@ -308,6 +349,9 @@ help:
 	@echo "... EventLoop_test04.o"
 	@echo "... EventLoop_test04.i"
 	@echo "... EventLoop_test04.s"
+	@echo "... InetAddress_unittest.o"
+	@echo "... InetAddress_unittest.i"
+	@echo "... InetAddress_unittest.s"
 .PHONY : help
 
 

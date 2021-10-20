@@ -97,6 +97,8 @@ src/EventLoop.h
 /home/chenhao/tinyWeb/base/src/Thread.h
 src/TimerId.h
 /home/chenhao/tinyWeb/net/src/TimerId.h
+EventLoopThread.h
+/home/chenhao/tinyWeb/net/EventLoopThread.h
 
 /home/chenhao/tinyWeb/net/src/EventLoop.h
 unistd.h

@@ -5,8 +5,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o"
   "CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o"
   "CMakeFiles/tinyWeb_net.dir/EventLoop.cc.o"
+  "CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o"
   "CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o"
   "CMakeFiles/tinyWeb_net.dir/Poller.cc.o"
+  "CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o"
   "CMakeFiles/tinyWeb_net.dir/Timer.cc.o"
   "CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o"
 )
