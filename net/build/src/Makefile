@@ -125,6 +125,33 @@ tinyWeb_net/fast:
 	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/build
 .PHONY : tinyWeb_net/fast
 
+Acceptor.o: Acceptor.cc.o
+
+.PHONY : Acceptor.o
+
+# target to build an object file
+Acceptor.cc.o:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Acceptor.cc.o
+.PHONY : Acceptor.cc.o
+
+Acceptor.i: Acceptor.cc.i
+
+.PHONY : Acceptor.i
+
+# target to preprocess a source file
+Acceptor.cc.i:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Acceptor.cc.i
+.PHONY : Acceptor.cc.i
+
+Acceptor.s: Acceptor.cc.s
+
+.PHONY : Acceptor.s
+
+# target to generate assembly for a file
+Acceptor.cc.s:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Acceptor.cc.s
+.PHONY : Acceptor.cc.s
+
 Channel.o: Channel.cc.o
 
 .PHONY : Channel.o
@@ -458,6 +485,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... tinyWeb_net"
+	@echo "... Acceptor.o"
+	@echo "... Acceptor.i"
+	@echo "... Acceptor.s"
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
