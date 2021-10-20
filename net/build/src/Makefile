@@ -260,6 +260,33 @@ EventLoopThread.cc.s:
 	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.s
 .PHONY : EventLoopThread.cc.s
 
+InetAddress.o: InetAddress.cc.o
+
+.PHONY : InetAddress.o
+
+# target to build an object file
+InetAddress.cc.o:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o
+.PHONY : InetAddress.cc.o
+
+InetAddress.i: InetAddress.cc.i
+
+.PHONY : InetAddress.i
+
+# target to preprocess a source file
+InetAddress.cc.i:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.i
+.PHONY : InetAddress.cc.i
+
+InetAddress.s: InetAddress.cc.s
+
+.PHONY : InetAddress.s
+
+# target to generate assembly for a file
+InetAddress.cc.s:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.s
+.PHONY : InetAddress.cc.s
+
 PollPoller.o: PollPoller.cc.o
 
 .PHONY : PollPoller.o
@@ -313,6 +340,60 @@ Poller.s: Poller.cc.s
 Poller.cc.s:
 	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Poller.cc.s
 .PHONY : Poller.cc.s
+
+Socket.o: Socket.cc.o
+
+.PHONY : Socket.o
+
+# target to build an object file
+Socket.cc.o:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o
+.PHONY : Socket.cc.o
+
+Socket.i: Socket.cc.i
+
+.PHONY : Socket.i
+
+# target to preprocess a source file
+Socket.cc.i:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Socket.cc.i
+.PHONY : Socket.cc.i
+
+Socket.s: Socket.cc.s
+
+.PHONY : Socket.s
+
+# target to generate assembly for a file
+Socket.cc.s:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/Socket.cc.s
+.PHONY : Socket.cc.s
+
+SocketOps.o: SocketOps.cc.o
+
+.PHONY : SocketOps.o
+
+# target to build an object file
+SocketOps.cc.o:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o
+.PHONY : SocketOps.cc.o
+
+SocketOps.i: SocketOps.cc.i
+
+.PHONY : SocketOps.i
+
+# target to preprocess a source file
+SocketOps.cc.i:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.i
+.PHONY : SocketOps.cc.i
+
+SocketOps.s: SocketOps.cc.s
+
+.PHONY : SocketOps.s
+
+# target to generate assembly for a file
+SocketOps.cc.s:
+	cd /home/chenhao/tinyWeb/net/build && $(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.s
+.PHONY : SocketOps.cc.s
 
 Timer.o: Timer.cc.o
 
@@ -392,12 +473,21 @@ help:
 	@echo "... EventLoopThread.o"
 	@echo "... EventLoopThread.i"
 	@echo "... EventLoopThread.s"
+	@echo "... InetAddress.o"
+	@echo "... InetAddress.i"
+	@echo "... InetAddress.s"
 	@echo "... PollPoller.o"
 	@echo "... PollPoller.i"
 	@echo "... PollPoller.s"
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"
+	@echo "... Socket.o"
+	@echo "... Socket.i"
+	@echo "... Socket.s"
+	@echo "... SocketOps.o"
+	@echo "... SocketOps.i"
+	@echo "... SocketOps.s"
 	@echo "... Timer.o"
 	@echo "... Timer.i"
 	@echo "... Timer.s"

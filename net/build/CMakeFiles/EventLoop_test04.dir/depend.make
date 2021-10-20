@@ -12,5 +12,6 @@ CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o: /home/chenhao/tinyWeb/bas
 CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o: ../EventLoop_test04.cc
 CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o: ../src/EventLoop.h
+CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o: ../src/EventLoopThread.h
 CMakeFiles/EventLoop_test04.dir/EventLoop_test04.cc.o: ../src/TimerId.h
 

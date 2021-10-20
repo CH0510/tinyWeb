@@ -71,6 +71,18 @@ src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoop.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoopThread.cc
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoopThread.h
 
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: ../src/Endian.h
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: ../src/InetAddress.cc
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: ../src/InetAddress.h
+src/CMakeFiles/tinyWeb_net.dir/InetAddress.cc.o: ../src/SocketOps.h
+
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/PollPoller.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
@@ -95,6 +107,26 @@ src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/EventLoop.h
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Poller.cc
 src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o: ../src/Poller.h
+
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: ../src/Endian.h
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: ../src/InetAddress.h
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: ../src/Socket.cc
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: ../src/Socket.h
+src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o: ../src/SocketOps.h
+
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: ../src/Endian.h
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: ../src/SocketOps.cc
+src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: ../src/SocketOps.h
 
 src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: /home/chenhao/tinyWeb/base/src/Atomic.hpp
 src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
