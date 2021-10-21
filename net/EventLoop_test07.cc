@@ -2,6 +2,7 @@
 #include "src/EventLoop.h"
 #include "src/InetAddress.h"
 #include "src/SocketOps.h"
+#include "../base/src/Timestamp.h"
 
 #include <stdio.h>
 
@@ -11,7 +12,10 @@ using namespace tinyWeb::net;
 void newConnection(int sockfd, const InetAddress& peerAddr) {
   printf("newConnection(): accepted a new connection from %s\n", \
           peerAddr.toIpPort().c_str());
-  int ret = ::write(sockfd, "How are you?\n", 13);
+  char buf[512] = {0};
+  int n = snprintf(buf, sizeof buf, "%s\n", \
+                    Timestamp::now().toLocalFormatString().c_str());
+  int ret = ::write(sockfd, buf, n);
   (void) ret;
   sockets::close(sockfd);
 }
