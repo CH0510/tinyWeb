@@ -147,7 +147,10 @@ src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: ../src/SocketOps.cc
 src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o: ../src/SocketOps.h
 
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/Types.h

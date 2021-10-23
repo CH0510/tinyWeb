@@ -49,10 +49,15 @@ class TcpServer : public noncopyable {
   // TcpConnection用于管理新的链接，并调用用户绑定的新连接回调函数
   void newConnection(int fd, const InetAddress& peerAddr);
 
+  // 当一个 TcpConnection 所管理的连接关闭时，会调用handleClose()
+  // 进而调用该函数将链接从TcpServer中移除，
+  // 完成这些操作后，其会调用 TcpConnection::connectionDestroy()做收尾工作
+  void removeConnection(const TcpConnectionPtr &conn);
+
   EventLoop* ownerLoop_;
   const std::string name_;  // 服务器的名称
-  std::unique_ptr<Acceptor> acceptor_;  // 服务器接受新连接的监听套接字
-  //bool started_;
+  std::unique_ptr<Acceptor> acceptor_;  // 服务器接收新连接的监听套接字
+  //bool started_;  // 无法满足原子性的要求
   AtomicInt32 started_;
   uint64_t nextConn_;  // 客户端的序列号
   ConnectionCallback connectionCallback_;

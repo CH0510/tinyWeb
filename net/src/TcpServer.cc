@@ -41,13 +41,33 @@ void TcpServer::newConnection(int connFd, const InetAddress& peerAddr) {
   LOG_INFO << "TcpServer::newConnection: [" << name_ \
            << "] - new connection [" << connName \
            << "] from " << peerAddr.toIpPort();
-  
+  // 创建一个 TcpConnection 来管理新的连接
   TcpConnectionPtr conn(new TcpConnection( \
           ownerLoop_, connName, connFd, sockets::getLocalAddr(connFd), peerAddr));
   conn->setConnectionCallback(connectionCallback_);
   conn->setMessageCallback(messageCallback_);
+  conn->setCloseCallback(std::bind( \
+                         &TcpServer::removeConnection, \
+                         this, \
+                         std::placeholders::_1));
   connections_[connName] = conn;
+  // 对 TcpConnection 完成所有的初始化之后，
+  // 调用 TcpConnection::connectEstablished() 
+  // 启动链接描述符上的监听事件并调用用户的回调
   conn->connectEstablished();
+}
+
+void TcpServer::removeConnection(const TcpConnectionPtr &conn) {
+  ownerLoop_->assertInLoopThread();
+  assert(connections_.find(conn->name()) != connections_.end());
+  LOG_INFO << "TcpServer::removeConnection() [" << name_ \
+           <<  "] - connection " << conn->name();
+  // erase 后引用计数变为1，只剩下函数参数传递进来的的 conn
+  size_t n = connections_.erase(conn->name());
+  assert(n == 1); (void) n;
+  // 在此处bind是值语义，所以会拷贝一份，使得引用计数变为2
+  ownerLoop_->queueInLoop(std::bind( \
+                          &TcpConnection::connectDestroyed, conn));
 }
 
 }  // namespace net
