@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named EventLoop_test08
+
+# Build rule for target.
+EventLoop_test08: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test08
+.PHONY : EventLoop_test08
+
+# fast build rule for target.
+EventLoop_test08/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/build
+.PHONY : EventLoop_test08/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test07
 
 # Build rule for target.
@@ -376,6 +389,33 @@ EventLoop_test07.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test07.dir/build.make CMakeFiles/EventLoop_test07.dir/EventLoop_test07.cc.s
 .PHONY : EventLoop_test07.cc.s
 
+EventLoop_test08.o: EventLoop_test08.cc.o
+
+.PHONY : EventLoop_test08.o
+
+# target to build an object file
+EventLoop_test08.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o
+.PHONY : EventLoop_test08.cc.o
+
+EventLoop_test08.i: EventLoop_test08.cc.i
+
+.PHONY : EventLoop_test08.i
+
+# target to preprocess a source file
+EventLoop_test08.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.i
+.PHONY : EventLoop_test08.cc.i
+
+EventLoop_test08.s: EventLoop_test08.cc.s
+
+.PHONY : EventLoop_test08.s
+
+# target to generate assembly for a file
+EventLoop_test08.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.s
+.PHONY : EventLoop_test08.cc.s
+
 InetAddress_unittest.o: InetAddress_unittest.cc.o
 
 .PHONY : InetAddress_unittest.o
@@ -409,6 +449,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... EventLoop_test08"
 	@echo "... EventLoop_test07"
 	@echo "... InetAddress_unittest"
 	@echo "... EventLoop_test04"
@@ -437,6 +478,9 @@ help:
 	@echo "... EventLoop_test07.o"
 	@echo "... EventLoop_test07.i"
 	@echo "... EventLoop_test07.s"
+	@echo "... EventLoop_test08.o"
+	@echo "... EventLoop_test08.i"
+	@echo "... EventLoop_test08.s"
 	@echo "... InetAddress_unittest.o"
 	@echo "... InetAddress_unittest.i"
 	@echo "... InetAddress_unittest.s"

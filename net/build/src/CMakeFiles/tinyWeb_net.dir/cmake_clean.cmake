@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tinyWeb_net.dir/Poller.cc.o"
   "CMakeFiles/tinyWeb_net.dir/Socket.cc.o"
   "CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o"
+  "CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o"
+  "CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o"
   "CMakeFiles/tinyWeb_net.dir/Timer.cc.o"
   "CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o"
 )

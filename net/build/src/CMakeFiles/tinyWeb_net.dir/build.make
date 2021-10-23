@@ -200,9 +200,35 @@ src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyWeb_net.dir/SocketOps.cc.s"
 	cd /home/chenhao/tinyWeb/net/build/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chenhao/tinyWeb/net/src/SocketOps.cc -o CMakeFiles/tinyWeb_net.dir/SocketOps.cc.s
 
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: src/CMakeFiles/tinyWeb_net.dir/flags.make
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: ../src/TcpConnection.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o"
+	cd /home/chenhao/tinyWeb/net/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o -c /home/chenhao/tinyWeb/net/src/TcpConnection.cc
+
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.i"
+	cd /home/chenhao/tinyWeb/net/build/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chenhao/tinyWeb/net/src/TcpConnection.cc > CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.i
+
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.s"
+	cd /home/chenhao/tinyWeb/net/build/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chenhao/tinyWeb/net/src/TcpConnection.cc -o CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.s
+
+src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: src/CMakeFiles/tinyWeb_net.dir/flags.make
+src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: ../src/TcpServer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o"
+	cd /home/chenhao/tinyWeb/net/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o -c /home/chenhao/tinyWeb/net/src/TcpServer.cc
+
+src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyWeb_net.dir/TcpServer.cc.i"
+	cd /home/chenhao/tinyWeb/net/build/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chenhao/tinyWeb/net/src/TcpServer.cc > CMakeFiles/tinyWeb_net.dir/TcpServer.cc.i
+
+src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyWeb_net.dir/TcpServer.cc.s"
+	cd /home/chenhao/tinyWeb/net/build/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chenhao/tinyWeb/net/src/TcpServer.cc -o CMakeFiles/tinyWeb_net.dir/TcpServer.cc.s
+
 src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: src/CMakeFiles/tinyWeb_net.dir/flags.make
 src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o: ../src/Timer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o"
 	cd /home/chenhao/tinyWeb/net/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tinyWeb_net.dir/Timer.cc.o -c /home/chenhao/tinyWeb/net/src/Timer.cc
 
 src/CMakeFiles/tinyWeb_net.dir/Timer.cc.i: cmake_force
@@ -215,7 +241,7 @@ src/CMakeFiles/tinyWeb_net.dir/Timer.cc.s: cmake_force
 
 src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: src/CMakeFiles/tinyWeb_net.dir/flags.make
 src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o: ../src/TimerQueue.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o"
 	cd /home/chenhao/tinyWeb/net/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o -c /home/chenhao/tinyWeb/net/src/TimerQueue.cc
 
 src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.i: cmake_force
@@ -239,6 +265,8 @@ tinyWeb_net_OBJECTS = \
 "CMakeFiles/tinyWeb_net.dir/Poller.cc.o" \
 "CMakeFiles/tinyWeb_net.dir/Socket.cc.o" \
 "CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o" \
+"CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o" \
+"CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o" \
 "CMakeFiles/tinyWeb_net.dir/Timer.cc.o" \
 "CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o"
 
@@ -256,11 +284,13 @@ tinyWeb_net_EXTERNAL_OBJECTS =
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/Poller.cc.o
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/Socket.cc.o
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/SocketOps.cc.o
+../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o
+../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/Timer.cc.o
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/TimerQueue.cc.o
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/build.make
 ../lib/libtinyWeb_net.a: src/CMakeFiles/tinyWeb_net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library ../../lib/libtinyWeb_net.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library ../../lib/libtinyWeb_net.a"
 	cd /home/chenhao/tinyWeb/net/build/src && $(CMAKE_COMMAND) -P CMakeFiles/tinyWeb_net.dir/cmake_clean_target.cmake
 	cd /home/chenhao/tinyWeb/net/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tinyWeb_net.dir/link.txt --verbose=$(VERBOSE)
 

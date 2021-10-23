@@ -13,7 +13,7 @@ class AtomicIntegerT : public noncopyable {
  public:
   AtomicIntegerT() : value_(0) { }
 
-  T get() {
+  T get() const {
     return __atomic_load_n(&value_, __ATOMIC_SEQ_CST);
   }
 
