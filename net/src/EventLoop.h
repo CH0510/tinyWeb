@@ -62,6 +62,7 @@ class EventLoop : public noncopyable {
   void wakeup();
 
   void runInLoop(const PendingFunctor& cb);
+  void queueInLoop(const PendingFunctor& cb);
 
   TimerId runAt(const TimerCallback& cb, Timestamp timePoint);
   TimerId runAfter(const TimerCallback& cb, double duration);
@@ -75,7 +76,6 @@ class EventLoop : public noncopyable {
 
   void abortNotInLoopThread() const;
   void printActiveChannels() const;
-  void queueInLoop(const PendingFunctor& cb);
   void doPendingFunctors();
 
   bool looping_;  // atomic

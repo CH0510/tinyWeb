@@ -31,3 +31,6 @@ target_link_libraries(InetAddress_unittest tinyWeb_base tinyWeb_net pthread boos
 
 add_executable(EventLoop_test07 EventLoop_test07.cc)
 target_link_libraries(EventLoop_test07 tinyWeb_base tinyWeb_net pthread)
+
+add_executable(EventLoop_test08 EventLoop_test08.cc)
+target_link_libraries(EventLoop_test08 tinyWeb_base tinyWeb_net pthread)

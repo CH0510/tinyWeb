@@ -90,33 +90,11 @@ functional
 
 /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 
-/home/chenhao/tinyWeb/net/src/Acceptor.cc
-Acceptor.h
-/home/chenhao/tinyWeb/net/src/Acceptor.h
-unistd.h
+/home/chenhao/tinyWeb/net/src/Callbacks.h
+memory
 -
-fcntl.h
--
-assert.h
--
-SocketOps.h
-/home/chenhao/tinyWeb/net/src/SocketOps.h
-EventLoop.h
-/home/chenhao/tinyWeb/net/src/EventLoop.h
-InetAddress.h
-/home/chenhao/tinyWeb/net/src/InetAddress.h
-../../base/src/Logging.h
-/home/chenhao/tinyWeb/base/src/Logging.h
-
-/home/chenhao/tinyWeb/net/src/Acceptor.h
 functional
 -
-../../base/src/noncopyable.hpp
-/home/chenhao/tinyWeb/base/src/noncopyable.hpp
-Socket.h
-/home/chenhao/tinyWeb/net/src/Socket.h
-Channel.h
-/home/chenhao/tinyWeb/net/src/Channel.h
 
 /home/chenhao/tinyWeb/net/src/Channel.h
 assert.h
@@ -193,4 +171,28 @@ arpa/inet.h
 -
 stdint.h
 -
+
+/home/chenhao/tinyWeb/net/src/TcpConnection.cc
+TcpConnection.h
+/home/chenhao/tinyWeb/net/src/TcpConnection.h
+unistd.h
+-
+Socket.h
+/home/chenhao/tinyWeb/net/src/Socket.h
+Channel.h
+/home/chenhao/tinyWeb/net/src/Channel.h
+../../base/src/Logging.h
+/home/chenhao/tinyWeb/base/src/Logging.h
+
+/home/chenhao/tinyWeb/net/src/TcpConnection.h
+memory
+-
+string
+-
+../../base/src/noncopyable.hpp
+/home/chenhao/tinyWeb/base/src/noncopyable.hpp
+Callbacks.h
+/home/chenhao/tinyWeb/net/src/Callbacks.h
+InetAddress.h
+/home/chenhao/tinyWeb/net/src/InetAddress.h
 
