@@ -6,6 +6,7 @@
 #include "../../base/src/noncopyable.hpp"
 #include "Callbacks.h"
 #include "InetAddress.h"
+#include "Buffer.h"
 
 namespace tinyWeb {
 namespace net {
@@ -78,7 +79,7 @@ class TcpConnection : public noncopyable, \
 
   void setState(StateE state) { state_ = state; }
   std::string stateToString();
-  void handleRead();
+  void handleRead(Timestamp receiveTime);
   void handleWrite();
   void handleClose();
   void handleError();
@@ -90,6 +91,8 @@ class TcpConnection : public noncopyable, \
   std::unique_ptr<Channel> connChannel_;  // 连接描述符对应的事件通道
   InetAddress localAddress_;
   InetAddress peerAddress_;
+  Buffer inputBuffer_;
+
   ConnectionCallback connectionCallback_;
   MessageCallback messageCallback_;
   // 绑定到 TcpServer::removeConnection()，

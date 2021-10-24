@@ -45,6 +45,10 @@ class Socket {
   void setReceiveLowat(int size);
   // 设置发送低水位标志
   void setSendLowat(int size);
+  // 设置读超时值
+  void setReceiveTimeout(struct timeval timeout);
+  // 设置写超时值
+  void setSendTimeout(struct timeval timeout);
 
  private:
   const int fd_;

@@ -11,6 +11,7 @@
 #include "Acceptor.h"
 #include "Callbacks.h"
 #include "../../base/src/Atomic.hpp"
+#include "TcpConnection.h"
 
 namespace tinyWeb {
 namespace net {

@@ -19,10 +19,14 @@ void onConnection(const TcpConnectionPtr& conn) {
 }
 
 void onMessage(const TcpConnectionPtr& conn, \
-               const char* buf, \
-               size_t len) {
-  printf("onMessage() : reveived %zd bytes from connection [%s]\n", \
-          len , conn->name().c_str());
+               Buffer* buf, \
+               Timestamp receiveTime) {
+  std::string message(buf->retrieveAllAsString());
+  printf("onMessage() : reveived %zd[%s] bytes from connection [%s] at %s\n", \
+          message.size() , \
+          message.c_str(), \
+          conn->name().c_str(), \
+          receiveTime.toLocalFormatString().c_str());
 }
 
 int main() {

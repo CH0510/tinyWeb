@@ -3,6 +3,9 @@
 #include <memory>
 #include <functional>
 
+#include "Buffer.h"
+#include "../../base/src/Timestamp.h"
+
 namespace tinyWeb {
 namespace net {
 
@@ -13,8 +16,8 @@ typedef std::function<void(const TcpConnectionPtr&)> ConnectionCallback;
 typedef std::function<void(const TcpConnectionPtr&)> CloseCallback;
 typedef std::function<void(const TcpConnectionPtr&)> ErrorCallback;
 typedef std::function<void(const TcpConnectionPtr&, \
-                            const char* buf, \
-                            ssize_t len)> MessageCallback;
+                            Buffer* buf, \
+                            Timestamp receiveTime)> MessageCallback;
 
 }  // namespace net
 }  // namespace tinyWeb

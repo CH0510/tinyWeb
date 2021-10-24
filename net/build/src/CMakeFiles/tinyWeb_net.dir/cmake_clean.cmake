@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "../../lib/libtinyWeb_net.a"
   "../../lib/libtinyWeb_net.pdb"
   "CMakeFiles/tinyWeb_net.dir/Acceptor.cc.o"
+  "CMakeFiles/tinyWeb_net.dir/Buffer.cc.o"
   "CMakeFiles/tinyWeb_net.dir/Channel.cc.o"
   "CMakeFiles/tinyWeb_net.dir/DefaultPoller.cc.o"
   "CMakeFiles/tinyWeb_net.dir/EPollPoller.cc.o"

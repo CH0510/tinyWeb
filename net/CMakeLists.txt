@@ -34,3 +34,9 @@ target_link_libraries(EventLoop_test07 tinyWeb_base tinyWeb_net pthread)
 
 add_executable(EventLoop_test08 EventLoop_test08.cc)
 target_link_libraries(EventLoop_test08 tinyWeb_base tinyWeb_net pthread)
+
+add_executable(Buffer_unittest Buffer_unittest.cc)
+target_link_libraries(Buffer_unittest tinyWeb_base tinyWeb_net pthread boost_unit_test_framework)
+
+add_executable(EventLoop_test09 EventLoop_test09.cc)
+target_link_libraries(EventLoop_test09 tinyWeb_base tinyWeb_net pthread)
