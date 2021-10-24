@@ -10,6 +10,7 @@ CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/bas
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: ../EventLoop_test08.cc
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: ../src/Acceptor.h
+CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: ../src/Buffer.h
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: ../src/Callbacks.h
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: ../src/Channel.h
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: ../src/Endian.h

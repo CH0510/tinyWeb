@@ -1,7 +1,6 @@
 #include "TcpServer.h"
 
 #include "../../base/src/Logging.h"
-#include "TcpConnection.h"
 #include "SocketOps.h"
 
 namespace tinyWeb {

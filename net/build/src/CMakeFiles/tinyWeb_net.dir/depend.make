@@ -19,6 +19,12 @@ src/CMakeFiles/tinyWeb_net.dir/Acceptor.cc.o: ../src/InetAddress.h
 src/CMakeFiles/tinyWeb_net.dir/Acceptor.cc.o: ../src/Socket.h
 src/CMakeFiles/tinyWeb_net.dir/Acceptor.cc.o: ../src/SocketOps.h
 
+src/CMakeFiles/tinyWeb_net.dir/Buffer.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
+src/CMakeFiles/tinyWeb_net.dir/Buffer.cc.o: ../src/Buffer.cc
+src/CMakeFiles/tinyWeb_net.dir/Buffer.cc.o: ../src/Buffer.h
+src/CMakeFiles/tinyWeb_net.dir/Buffer.cc.o: ../src/Endian.h
+src/CMakeFiles/tinyWeb_net.dir/Buffer.cc.o: ../src/SocketOps.h
+
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
 src/CMakeFiles/tinyWeb_net.dir/Channel.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
@@ -155,6 +161,7 @@ src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/sr
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: ../src/Buffer.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: ../src/Callbacks.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/TcpConnection.cc.o: ../src/Endian.h
@@ -176,6 +183,7 @@ src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: /home/chenhao/tinyWeb/base/src/Ti
 src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: ../src/Acceptor.h
+src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: ../src/Buffer.h
 src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: ../src/Callbacks.h
 src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: ../src/Channel.h
 src/CMakeFiles/tinyWeb_net.dir/TcpServer.cc.o: ../src/Endian.h

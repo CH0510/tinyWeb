@@ -21,7 +21,8 @@ TcpConnection::TcpConnection(EventLoop* loop, \
     connChannel_(new Channel(loop, connfd)), \
     localAddress_(localAddr), \
     peerAddress_(peerAddr) {
-  connChannel_->setReadCallback(std::bind(&TcpConnection::handleRead, this));
+  connChannel_->setReadCallback(std::bind( \
+                     &TcpConnection::handleRead, this, std::placeholders::_1));
   connChannel_->setWriteCallback(std::bind(&TcpConnection::handleWrite, this));
   connChannel_->setCloseCallback(std::bind(&TcpConnection::handleClose, this));
   connChannel_->setErrorCallback(std::bind(&TcpConnection::handleError, this));
@@ -75,12 +76,12 @@ std::string TcpConnection::stateToString() {
   }
 }
 
-void TcpConnection::handleRead() {
+void TcpConnection::handleRead(Timestamp receiveTime) {
   ownerLoop_->assertInLoopThread();
-  char buf[65536] = {0};
-  ssize_t len = ::read(connSock_->fd(), buf, sizeof buf);
+  int saveErrno = 0;
+  ssize_t len = inputBuffer_.readFd(connSock_->fd(), &saveErrno);
   if (len > 0) {
-    messageCallback_(shared_from_this() , buf, len);
+    messageCallback_(shared_from_this() , &inputBuffer_, receiveTime);
   } else if (len == 0) {
     handleClose();
   } else {

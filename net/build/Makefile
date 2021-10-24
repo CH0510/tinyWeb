@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Buffer_unittest
+
+# Build rule for target.
+Buffer_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Buffer_unittest
+.PHONY : Buffer_unittest
+
+# fast build rule for target.
+Buffer_unittest/fast:
+	$(MAKE) -f CMakeFiles/Buffer_unittest.dir/build.make CMakeFiles/Buffer_unittest.dir/build
+.PHONY : Buffer_unittest/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test08
 
 # Build rule for target.
@@ -122,6 +135,19 @@ EventLoop_test08: cmake_check_build_system
 EventLoop_test08/fast:
 	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/build
 .PHONY : EventLoop_test08/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test09
+
+# Build rule for target.
+EventLoop_test09: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test09
+.PHONY : EventLoop_test09
+
+# fast build rule for target.
+EventLoop_test09/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test09.dir/build.make CMakeFiles/EventLoop_test09.dir/build
+.PHONY : EventLoop_test09/fast
 
 #=============================================================================
 # Target rules for targets named EventLoop_test07
@@ -226,6 +252,33 @@ tinyWeb_net: cmake_check_build_system
 tinyWeb_net/fast:
 	$(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/build
 .PHONY : tinyWeb_net/fast
+
+Buffer_unittest.o: Buffer_unittest.cc.o
+
+.PHONY : Buffer_unittest.o
+
+# target to build an object file
+Buffer_unittest.cc.o:
+	$(MAKE) -f CMakeFiles/Buffer_unittest.dir/build.make CMakeFiles/Buffer_unittest.dir/Buffer_unittest.cc.o
+.PHONY : Buffer_unittest.cc.o
+
+Buffer_unittest.i: Buffer_unittest.cc.i
+
+.PHONY : Buffer_unittest.i
+
+# target to preprocess a source file
+Buffer_unittest.cc.i:
+	$(MAKE) -f CMakeFiles/Buffer_unittest.dir/build.make CMakeFiles/Buffer_unittest.dir/Buffer_unittest.cc.i
+.PHONY : Buffer_unittest.cc.i
+
+Buffer_unittest.s: Buffer_unittest.cc.s
+
+.PHONY : Buffer_unittest.s
+
+# target to generate assembly for a file
+Buffer_unittest.cc.s:
+	$(MAKE) -f CMakeFiles/Buffer_unittest.dir/build.make CMakeFiles/Buffer_unittest.dir/Buffer_unittest.cc.s
+.PHONY : Buffer_unittest.cc.s
 
 EventLoop_test01.o: EventLoop_test01.cc.o
 
@@ -416,6 +469,33 @@ EventLoop_test08.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.s
 .PHONY : EventLoop_test08.cc.s
 
+EventLoop_test09.o: EventLoop_test09.cc.o
+
+.PHONY : EventLoop_test09.o
+
+# target to build an object file
+EventLoop_test09.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test09.dir/build.make CMakeFiles/EventLoop_test09.dir/EventLoop_test09.cc.o
+.PHONY : EventLoop_test09.cc.o
+
+EventLoop_test09.i: EventLoop_test09.cc.i
+
+.PHONY : EventLoop_test09.i
+
+# target to preprocess a source file
+EventLoop_test09.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test09.dir/build.make CMakeFiles/EventLoop_test09.dir/EventLoop_test09.cc.i
+.PHONY : EventLoop_test09.cc.i
+
+EventLoop_test09.s: EventLoop_test09.cc.s
+
+.PHONY : EventLoop_test09.s
+
+# target to generate assembly for a file
+EventLoop_test09.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test09.dir/build.make CMakeFiles/EventLoop_test09.dir/EventLoop_test09.cc.s
+.PHONY : EventLoop_test09.cc.s
+
 InetAddress_unittest.o: InetAddress_unittest.cc.o
 
 .PHONY : InetAddress_unittest.o
@@ -449,7 +529,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... Buffer_unittest"
 	@echo "... EventLoop_test08"
+	@echo "... EventLoop_test09"
 	@echo "... EventLoop_test07"
 	@echo "... InetAddress_unittest"
 	@echo "... EventLoop_test04"
@@ -460,6 +542,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... EventLoop_test01"
 	@echo "... tinyWeb_net"
+	@echo "... Buffer_unittest.o"
+	@echo "... Buffer_unittest.i"
+	@echo "... Buffer_unittest.s"
 	@echo "... EventLoop_test01.o"
 	@echo "... EventLoop_test01.i"
 	@echo "... EventLoop_test01.s"
@@ -481,6 +566,9 @@ help:
 	@echo "... EventLoop_test08.o"
 	@echo "... EventLoop_test08.i"
 	@echo "... EventLoop_test08.s"
+	@echo "... EventLoop_test09.o"
+	@echo "... EventLoop_test09.i"
+	@echo "... EventLoop_test09.s"
 	@echo "... InetAddress_unittest.o"
 	@echo "... InetAddress_unittest.i"
 	@echo "... InetAddress_unittest.s"

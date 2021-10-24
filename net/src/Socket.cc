@@ -84,5 +84,15 @@ void Socket::setSendLowat(int size) {
               &size, static_cast<socklen_t>(sizeof(size))));
 }
 
+void Socket::setReceiveTimeout(struct timeval timeout) {
+  MCHECK(::setsockopt(fd_, SOL_SOCKET, SO_RCVTIMEO, \
+              &timeout, static_cast<socklen_t>(sizeof timeout)));
+}
+
+void Socket::setSendTimeout(struct timeval timeout) {
+  MCHECK(::setsockopt(fd_, SOL_SOCKET, SO_SNDTIMEO, \
+              &timeout, static_cast<socklen_t>(sizeof timeout)));
+}
+
 }  // namespace net
 }  // namespace tinyWeb
