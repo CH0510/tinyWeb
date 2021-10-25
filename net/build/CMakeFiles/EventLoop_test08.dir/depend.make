@@ -3,7 +3,10 @@
 
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/Atomic.hpp
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
+CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/LogStream.h
+CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/Logging.h
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/Singleton.hpp
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 CMakeFiles/EventLoop_test08.dir/EventLoop_test08.cc.o: /home/chenhao/tinyWeb/base/src/Types.h

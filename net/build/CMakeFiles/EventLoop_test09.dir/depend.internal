@@ -4,7 +4,10 @@
 CMakeFiles/EventLoop_test09.dir/EventLoop_test09.cc.o
  /home/chenhao/tinyWeb/base/src/Atomic.hpp
  /home/chenhao/tinyWeb/base/src/CurrentThread.h
+ /home/chenhao/tinyWeb/base/src/LogStream.h
+ /home/chenhao/tinyWeb/base/src/Logging.h
  /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+ /home/chenhao/tinyWeb/base/src/Singleton.hpp
  /home/chenhao/tinyWeb/base/src/StringPiece.hpp
  /home/chenhao/tinyWeb/base/src/Timestamp.h
  /home/chenhao/tinyWeb/base/src/Types.h

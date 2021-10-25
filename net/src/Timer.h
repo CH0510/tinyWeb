@@ -42,6 +42,7 @@ class Timer : public noncopyable {
   // 是否是周期定时器
   bool repeated_;
   // 定时器的序列号
+  // 因为无法识别地址相同的两个定时器
   int64_t sequence_;
 
   static AtomicInt64 numCreated_;

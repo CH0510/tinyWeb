@@ -19,9 +19,9 @@ namespace net {
 class EventLoop;
 class TcpConnection;
 
-// 服务器类，供客户直接使用
-// 客户可封装自己的服务器类，并包含一个TcpServer实例
-// 使用前需设置响应的回调函数，对于建立的每一个链接都将调用该回调函数
+// 服务器类，供客户端使用,其生命周期由客户端管理,
+// 客户可直接使用该类，或在自己服务器类中包含一个TcpServer实例,
+// 使用前需设置响应的回调函数，对于建立的每一个连接都将调用这些回调函数
 class TcpServer : public noncopyable {
  public:
   TcpServer(EventLoop* loop, \
@@ -39,6 +39,10 @@ class TcpServer : public noncopyable {
     messageCallback_ = messageCallback;
   }
 
+  void setWriteCompleteCallback(WriteCompleteCallback writeCompleteCallback) {
+    writeCompleteCallback_ = writeCompleteCallback;
+  }
+
   // 启动服务器，线程安全，且可以多次调用
   // 函数会启动内部的监听套接字
   void start();
@@ -46,7 +50,7 @@ class TcpServer : public noncopyable {
  private:
   typedef std::map<std::string, TcpConnectionPtr> ConnectionMap;
 
-  // 新连接到来的回调函数，其会根据新连接的文件描述符创建一个
+  // 新连接到来的回调函数(Acceptor的回调函数)，其会根据新连接的文件描述符创建一个
   // TcpConnection用于管理新的链接，并调用用户绑定的新连接回调函数
   void newConnection(int fd, const InetAddress& peerAddr);
 
@@ -61,8 +65,10 @@ class TcpServer : public noncopyable {
   //bool started_;  // 无法满足原子性的要求
   AtomicInt32 started_;
   uint64_t nextConn_;  // 客户端的序列号
+  // 一个TCP应处理的三个半事件，客户端应绑定自己的回调函数
   ConnectionCallback connectionCallback_;
   MessageCallback messageCallback_;
+  WriteCompleteCallback writeCompleteCallback_;
   // 维护一个已建立连接的队列，
   // 键为连接名，值为相应的TcpConnection对象
   ConnectionMap connections_;

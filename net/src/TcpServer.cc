@@ -5,6 +5,29 @@
 
 namespace tinyWeb {
 namespace net {
+namespace detail {
+  void defaultConnectionCallback(const TcpConnectionPtr& conn) {
+    if (conn->connected())
+    {
+      printf("onConnection(): new connection [%s] from %s\n",
+             conn->name().c_str(),
+             conn->peerAddress().toIpPort().c_str());
+    }
+    else
+    {
+      printf("onConnection(): connection [%s] is down\n",
+             conn->name().c_str());
+    }
+  }
+
+  void defaultMessageCallback(const TcpConnectionPtr& conn, \
+                              Buffer* msg, \
+                              Timestamp receiveTime) {
+    // 默认是 discard
+    msg->retrieveAll();
+  }
+}  // namespace detail
+
 
 TcpServer::TcpServer(EventLoop* loop, \
           const InetAddress& listenAddr, \
@@ -15,6 +38,8 @@ TcpServer::TcpServer(EventLoop* loop, \
   acceptor_->setNewConnectionCallback( \
       std::bind(&TcpServer::newConnection, this, \
                 std::placeholders::_1, std::placeholders::_2));
+  connectionCallback_ = detail::defaultConnectionCallback;
+  messageCallback_ = detail::defaultMessageCallback;
 }
 
 // 使用 runInLoop 保证该函数的线程安全性
@@ -45,6 +70,7 @@ void TcpServer::newConnection(int connFd, const InetAddress& peerAddr) {
           ownerLoop_, connName, connFd, sockets::getLocalAddr(connFd), peerAddr));
   conn->setConnectionCallback(connectionCallback_);
   conn->setMessageCallback(messageCallback_);
+  conn->setWriteCompleteCallback(writeCompleteCallback_);
   conn->setCloseCallback(std::bind( \
                          &TcpServer::removeConnection, \
                          this, \
