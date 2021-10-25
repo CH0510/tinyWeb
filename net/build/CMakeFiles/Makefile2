@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/chenhao/tinyWeb/net/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/EventLoop_test10.dir/all
 all: CMakeFiles/Buffer_unittest.dir/all
 all: CMakeFiles/EventLoop_test08.dir/all
 all: CMakeFiles/EventLoop_test09.dir/all
@@ -73,6 +74,7 @@ preinstall: src/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/EventLoop_test10.dir/clean
 clean: CMakeFiles/Buffer_unittest.dir/clean
 clean: CMakeFiles/EventLoop_test08.dir/clean
 clean: CMakeFiles/EventLoop_test09.dir/clean
@@ -104,6 +106,33 @@ src/preinstall:
 src/clean: src/CMakeFiles/tinyWeb_net.dir/clean
 
 .PHONY : src/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/EventLoop_test10.dir
+
+# All Build rule for target.
+CMakeFiles/EventLoop_test10.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
+	$(MAKE) -f CMakeFiles/EventLoop_test10.dir/build.make CMakeFiles/EventLoop_test10.dir/depend
+	$(MAKE) -f CMakeFiles/EventLoop_test10.dir/build.make CMakeFiles/EventLoop_test10.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=19,20 "Built target EventLoop_test10"
+.PHONY : CMakeFiles/EventLoop_test10.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/EventLoop_test10.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 19
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test10.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chenhao/tinyWeb/net/build/CMakeFiles 0
+.PHONY : CMakeFiles/EventLoop_test10.dir/rule
+
+# Convenience name for target.
+EventLoop_test10: CMakeFiles/EventLoop_test10.dir/rule
+
+.PHONY : EventLoop_test10
+
+# clean rule for target.
+CMakeFiles/EventLoop_test10.dir/clean:
+	$(MAKE) -f CMakeFiles/EventLoop_test10.dir/build.make CMakeFiles/EventLoop_test10.dir/clean
+.PHONY : CMakeFiles/EventLoop_test10.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Buffer_unittest.dir
@@ -220,7 +249,7 @@ CMakeFiles/EventLoop_test07.dir/clean:
 CMakeFiles/InetAddress_unittest.dir/all: src/CMakeFiles/tinyWeb_net.dir/all
 	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/depend
 	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=19,20 "Built target InetAddress_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=21,22 "Built target InetAddress_unittest"
 .PHONY : CMakeFiles/InetAddress_unittest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -382,7 +411,7 @@ CMakeFiles/EventLoop_test01.dir/clean:
 src/CMakeFiles/tinyWeb_net.dir/all:
 	$(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/depend
 	$(MAKE) -f src/CMakeFiles/tinyWeb_net.dir/build.make src/CMakeFiles/tinyWeb_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Built target tinyWeb_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chenhao/tinyWeb/net/build/CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39 "Built target tinyWeb_net"
 .PHONY : src/CMakeFiles/tinyWeb_net.dir/all
 
 # Build rule for subdir invocation for target.
