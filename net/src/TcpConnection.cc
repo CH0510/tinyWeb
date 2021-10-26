@@ -25,6 +25,9 @@ TcpConnection::TcpConnection(EventLoop* loop, \
   connChannel_->setWriteCallback(std::bind(&TcpConnection::handleWrite, this));
   connChannel_->setCloseCallback(std::bind(&TcpConnection::handleClose, this));
   connChannel_->setErrorCallback(std::bind(&TcpConnection::handleError, this));
+  LOG_DEBUG << "TcpConnection::ctor[" <<  name_ << "] at " << this
+          << " fd=" << connfd;
+  connSock_->setKeepAlive(true);
 }
 
 TcpConnection::~TcpConnection() {
@@ -36,7 +39,7 @@ TcpConnection::~TcpConnection() {
 void TcpConnection::connectEstablished() {
   ownerLoop_->assertInLoopThread();
   assert(state_ == kConnecting);
-  state_ = kConnected;
+  setState(kConnected);
   connChannel_->enableReading();
   // 由于采用的是 epoll 的水平触发模式，此时开启
   // 会导致 busy loop
@@ -96,7 +99,12 @@ void TcpConnection::handleWrite() {
         //  发送缓冲区发送完毕后需关闭写事件防止 busy loop
         connChannel_->disableWriting();
         if (writeCompleteCallback_) {
-          writeCompleteCallback_(shared_from_this());
+          // ！！！注意此处需在事件循环结束后才执行
+          // 防止writeCompleteCallback调用 send 形成魂环调用
+          // 导致服务器失去响应
+          ownerLoop_->queueInLoop(std::bind( \
+                                writeCompleteCallback_, \
+                                shared_from_this()));
         }
         // 发送缓冲区发送完毕，且之前调用过 shutdown() 则直接关闭套接字写端
         if (state_ == kDisConnecting) {
@@ -138,6 +146,7 @@ void TcpConnection::handleError() {
 void TcpConnection::send(const StringPiece& str) {
   if (state_ == kConnected) {
     if (ownerLoop_->isInLoopThread()) {
+      // 在本 IO 线程下就直接调用，防止拷贝带来的性能损失
       sendInLoop(str.data(), str.size());
     } else {
       // 由于存在函数重载，此处必须使用函数指针
@@ -154,17 +163,20 @@ void TcpConnection::send(const StringPiece& str) {
 
 void TcpConnection::send(Buffer* buf) {
   if (state_ == kConnected) {
-    sendInLoop(buf->peek(), buf->readableBytes());
-    buf->retrieveAll();
-  } else {
-    void (TcpConnection::*cb)(const StringPiece& str) = \
-                                      &TcpConnection::sendInLoop;
-    // 此处应将buf里的内容转为单独的string,因为离开本函数后buf的内容将是未知的
-    ownerLoop_->runInLoop(std::bind( \
-                          cb, \
-                          this, \
-                          buf->retrieveAllAsString()));
-  }
+    // 在本 IO 线程中就直接调用，防止拷贝带来的性能损失
+    if (ownerLoop_->isInLoopThread()) {
+      sendInLoop(buf->peek(), buf->readableBytes());
+      buf->retrieveAll();
+    } else {
+      void (TcpConnection::*cb)(const StringPiece& str) = \
+                                        &TcpConnection::sendInLoop;
+      // 此处应将buf里的内容转为单独的string,因为离开本函数后buf的内容将是未知的
+      ownerLoop_->runInLoop(std::bind( \
+                            cb, \
+                            this, \
+                            buf->retrieveAllAsString()));
+    }
+  } 
 }
 
 void TcpConnection::sendInLoop(const char* data, size_t len) {
@@ -173,6 +185,7 @@ void TcpConnection::sendInLoop(const char* data, size_t len) {
   size_t remaining = len;
   bool faultError = false;
 
+  // 防止在已断开TCP链接后客户仍调用send进行发送数据
   if (state_ == kDisConnected) {
     LOG_WARN << "disconneced, give up write";
     return;
@@ -186,7 +199,12 @@ void TcpConnection::sendInLoop(const char* data, size_t len) {
     if (nwriten >= 0) {
       remaining -= nwriten;
       if (remaining == 0 && writeCompleteCallback_) {
-        writeCompleteCallback_(shared_from_this());
+        // ！！！注意此处需在事件循环结束后才执行
+        // 防止writeCompleteCallback调用 send 形成魂环调用
+        // 导致服务器失去响应
+        ownerLoop_->queueInLoop(std::bind( \
+                              writeCompleteCallback_, \
+                              shared_from_this()));
       }
     } else {
       nwriten = 0;  // 防止后面 data + nwriten 时数组越界

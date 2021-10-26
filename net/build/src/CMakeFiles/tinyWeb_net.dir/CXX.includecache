@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/chenhao/tinyWeb/base/src/Atomic.hpp
-stdint.h
--
-noncopyable.hpp
-/home/chenhao/tinyWeb/base/src/noncopyable.hpp
-
 /home/chenhao/tinyWeb/base/src/CurrentThread.h
 unistd.h
 -
@@ -95,16 +89,6 @@ functional
 -
 
 /home/chenhao/tinyWeb/base/src/noncopyable.hpp
-
-/home/chenhao/tinyWeb/net/src/Acceptor.h
-functional
--
-../../base/src/noncopyable.hpp
-/home/chenhao/tinyWeb/base/src/noncopyable.hpp
-Socket.h
-/home/chenhao/tinyWeb/net/src/Socket.h
-Channel.h
-/home/chenhao/tinyWeb/net/src/Channel.h
 
 /home/chenhao/tinyWeb/net/src/Buffer.h
 sys/types.h
@@ -239,34 +223,4 @@ Buffer.h
 /home/chenhao/tinyWeb/net/src/Buffer.h
 ../../base/src/Logging.h
 /home/chenhao/tinyWeb/base/src/Logging.h
-
-/home/chenhao/tinyWeb/net/src/TcpServer.cc
-TcpServer.h
-/home/chenhao/tinyWeb/net/src/TcpServer.h
-../../base/src/Logging.h
-/home/chenhao/tinyWeb/base/src/Logging.h
-SocketOps.h
-/home/chenhao/tinyWeb/net/src/SocketOps.h
-
-/home/chenhao/tinyWeb/net/src/TcpServer.h
-stdint.h
--
-string
--
-memory
--
-map
--
-functional
--
-../../base/src/noncopyable.hpp
-/home/chenhao/tinyWeb/base/src/noncopyable.hpp
-Acceptor.h
-/home/chenhao/tinyWeb/net/src/Acceptor.h
-Callbacks.h
-/home/chenhao/tinyWeb/net/src/Callbacks.h
-../../base/src/Atomic.hpp
-/home/chenhao/tinyWeb/base/src/Atomic.hpp
-TcpConnection.h
-/home/chenhao/tinyWeb/net/src/TcpConnection.h
 

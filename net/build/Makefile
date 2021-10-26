@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/chenhao/tinyWeb/net/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,121 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named EventLoop_test10
+# Target rules for targets named EventLoop_test01
 
 # Build rule for target.
-EventLoop_test10: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test10
-.PHONY : EventLoop_test10
+EventLoop_test01: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test01
+.PHONY : EventLoop_test01
 
 # fast build rule for target.
-EventLoop_test10/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test10.dir/build.make CMakeFiles/EventLoop_test10.dir/build
-.PHONY : EventLoop_test10/fast
-
-#=============================================================================
-# Target rules for targets named Buffer_unittest
-
-# Build rule for target.
-Buffer_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Buffer_unittest
-.PHONY : Buffer_unittest
-
-# fast build rule for target.
-Buffer_unittest/fast:
-	$(MAKE) -f CMakeFiles/Buffer_unittest.dir/build.make CMakeFiles/Buffer_unittest.dir/build
-.PHONY : Buffer_unittest/fast
-
-#=============================================================================
-# Target rules for targets named EventLoop_test08
-
-# Build rule for target.
-EventLoop_test08: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test08
-.PHONY : EventLoop_test08
-
-# fast build rule for target.
-EventLoop_test08/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/build
-.PHONY : EventLoop_test08/fast
-
-#=============================================================================
-# Target rules for targets named EventLoop_test09
-
-# Build rule for target.
-EventLoop_test09: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test09
-.PHONY : EventLoop_test09
-
-# fast build rule for target.
-EventLoop_test09/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test09.dir/build.make CMakeFiles/EventLoop_test09.dir/build
-.PHONY : EventLoop_test09/fast
-
-#=============================================================================
-# Target rules for targets named EventLoop_test07
-
-# Build rule for target.
-EventLoop_test07: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test07
-.PHONY : EventLoop_test07
-
-# fast build rule for target.
-EventLoop_test07/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test07.dir/build.make CMakeFiles/EventLoop_test07.dir/build
-.PHONY : EventLoop_test07/fast
-
-#=============================================================================
-# Target rules for targets named InetAddress_unittest
-
-# Build rule for target.
-InetAddress_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 InetAddress_unittest
-.PHONY : InetAddress_unittest
-
-# fast build rule for target.
-InetAddress_unittest/fast:
-	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/build
-.PHONY : InetAddress_unittest/fast
-
-#=============================================================================
-# Target rules for targets named EventLoop_test04
-
-# Build rule for target.
-EventLoop_test04: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test04
-.PHONY : EventLoop_test04
-
-# fast build rule for target.
-EventLoop_test04/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/build
-.PHONY : EventLoop_test04/fast
-
-#=============================================================================
-# Target rules for targets named EventLoop_test03
-
-# Build rule for target.
-EventLoop_test03: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test03
-.PHONY : EventLoop_test03
-
-# fast build rule for target.
-EventLoop_test03/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test03.dir/build.make CMakeFiles/EventLoop_test03.dir/build
-.PHONY : EventLoop_test03/fast
-
-#=============================================================================
-# Target rules for targets named EventLoop_test06
-
-# Build rule for target.
-EventLoop_test06: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test06
-.PHONY : EventLoop_test06
-
-# fast build rule for target.
-EventLoop_test06/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/build
-.PHONY : EventLoop_test06/fast
+EventLoop_test01/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test01.dir/build.make CMakeFiles/EventLoop_test01.dir/build
+.PHONY : EventLoop_test01/fast
 
 #=============================================================================
 # Target rules for targets named EventLoop_test02
@@ -241,17 +137,134 @@ EventLoop_test02/fast:
 .PHONY : EventLoop_test02/fast
 
 #=============================================================================
-# Target rules for targets named EventLoop_test01
+# Target rules for targets named EventLoop_test06
 
 # Build rule for target.
-EventLoop_test01: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test01
-.PHONY : EventLoop_test01
+EventLoop_test06: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test06
+.PHONY : EventLoop_test06
 
 # fast build rule for target.
-EventLoop_test01/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test01.dir/build.make CMakeFiles/EventLoop_test01.dir/build
-.PHONY : EventLoop_test01/fast
+EventLoop_test06/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test06.dir/build.make CMakeFiles/EventLoop_test06.dir/build
+.PHONY : EventLoop_test06/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test03
+
+# Build rule for target.
+EventLoop_test03: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test03
+.PHONY : EventLoop_test03
+
+# fast build rule for target.
+EventLoop_test03/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test03.dir/build.make CMakeFiles/EventLoop_test03.dir/build
+.PHONY : EventLoop_test03/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test04
+
+# Build rule for target.
+EventLoop_test04: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test04
+.PHONY : EventLoop_test04
+
+# fast build rule for target.
+EventLoop_test04/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test04.dir/build.make CMakeFiles/EventLoop_test04.dir/build
+.PHONY : EventLoop_test04/fast
+
+#=============================================================================
+# Target rules for targets named InetAddress_unittest
+
+# Build rule for target.
+InetAddress_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 InetAddress_unittest
+.PHONY : InetAddress_unittest
+
+# fast build rule for target.
+InetAddress_unittest/fast:
+	$(MAKE) -f CMakeFiles/InetAddress_unittest.dir/build.make CMakeFiles/InetAddress_unittest.dir/build
+.PHONY : InetAddress_unittest/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test07
+
+# Build rule for target.
+EventLoop_test07: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test07
+.PHONY : EventLoop_test07
+
+# fast build rule for target.
+EventLoop_test07/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test07.dir/build.make CMakeFiles/EventLoop_test07.dir/build
+.PHONY : EventLoop_test07/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test09
+
+# Build rule for target.
+EventLoop_test09: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test09
+.PHONY : EventLoop_test09
+
+# fast build rule for target.
+EventLoop_test09/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test09.dir/build.make CMakeFiles/EventLoop_test09.dir/build
+.PHONY : EventLoop_test09/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test08
+
+# Build rule for target.
+EventLoop_test08: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test08
+.PHONY : EventLoop_test08
+
+# fast build rule for target.
+EventLoop_test08/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test08.dir/build.make CMakeFiles/EventLoop_test08.dir/build
+.PHONY : EventLoop_test08/fast
+
+#=============================================================================
+# Target rules for targets named Buffer_unittest
+
+# Build rule for target.
+Buffer_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Buffer_unittest
+.PHONY : Buffer_unittest
+
+# fast build rule for target.
+Buffer_unittest/fast:
+	$(MAKE) -f CMakeFiles/Buffer_unittest.dir/build.make CMakeFiles/Buffer_unittest.dir/build
+.PHONY : Buffer_unittest/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test10
+
+# Build rule for target.
+EventLoop_test10: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test10
+.PHONY : EventLoop_test10
+
+# fast build rule for target.
+EventLoop_test10/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test10.dir/build.make CMakeFiles/EventLoop_test10.dir/build
+.PHONY : EventLoop_test10/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test11
+
+# Build rule for target.
+EventLoop_test11: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test11
+.PHONY : EventLoop_test11
+
+# fast build rule for target.
+EventLoop_test11/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test11.dir/build.make CMakeFiles/EventLoop_test11.dir/build
+.PHONY : EventLoop_test11/fast
 
 #=============================================================================
 # Target rules for targets named tinyWeb_net
@@ -536,6 +549,33 @@ EventLoop_test10.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test10.dir/build.make CMakeFiles/EventLoop_test10.dir/EventLoop_test10.cc.s
 .PHONY : EventLoop_test10.cc.s
 
+EventLoop_test11.o: EventLoop_test11.cc.o
+
+.PHONY : EventLoop_test11.o
+
+# target to build an object file
+EventLoop_test11.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test11.dir/build.make CMakeFiles/EventLoop_test11.dir/EventLoop_test11.cc.o
+.PHONY : EventLoop_test11.cc.o
+
+EventLoop_test11.i: EventLoop_test11.cc.i
+
+.PHONY : EventLoop_test11.i
+
+# target to preprocess a source file
+EventLoop_test11.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test11.dir/build.make CMakeFiles/EventLoop_test11.dir/EventLoop_test11.cc.i
+.PHONY : EventLoop_test11.cc.i
+
+EventLoop_test11.s: EventLoop_test11.cc.s
+
+.PHONY : EventLoop_test11.s
+
+# target to generate assembly for a file
+EventLoop_test11.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test11.dir/build.make CMakeFiles/EventLoop_test11.dir/EventLoop_test11.cc.s
+.PHONY : EventLoop_test11.cc.s
+
 InetAddress_unittest.o: InetAddress_unittest.cc.o
 
 .PHONY : InetAddress_unittest.o
@@ -569,19 +609,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... EventLoop_test10"
-	@echo "... Buffer_unittest"
-	@echo "... EventLoop_test08"
-	@echo "... EventLoop_test09"
-	@echo "... EventLoop_test07"
-	@echo "... InetAddress_unittest"
-	@echo "... EventLoop_test04"
-	@echo "... EventLoop_test03"
-	@echo "... edit_cache"
-	@echo "... EventLoop_test06"
-	@echo "... EventLoop_test02"
-	@echo "... rebuild_cache"
 	@echo "... EventLoop_test01"
+	@echo "... EventLoop_test02"
+	@echo "... EventLoop_test06"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... EventLoop_test03"
+	@echo "... EventLoop_test04"
+	@echo "... InetAddress_unittest"
+	@echo "... EventLoop_test07"
+	@echo "... EventLoop_test09"
+	@echo "... EventLoop_test08"
+	@echo "... Buffer_unittest"
+	@echo "... EventLoop_test10"
+	@echo "... EventLoop_test11"
 	@echo "... tinyWeb_net"
 	@echo "... Buffer_unittest.o"
 	@echo "... Buffer_unittest.i"
@@ -613,6 +654,9 @@ help:
 	@echo "... EventLoop_test10.o"
 	@echo "... EventLoop_test10.i"
 	@echo "... EventLoop_test10.s"
+	@echo "... EventLoop_test11.o"
+	@echo "... EventLoop_test11.i"
+	@echo "... EventLoop_test11.s"
 	@echo "... InetAddress_unittest.o"
 	@echo "... InetAddress_unittest.i"
 	@echo "... InetAddress_unittest.s"

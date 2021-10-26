@@ -92,12 +92,20 @@ class TcpConnection : public noncopyable, \
   void send(const StringPiece& str);
   void send(Buffer* buf);
 
+  void setTcpNoDelay(bool on) {
+    connSock_->setTcpNoDelay(on);
+  }
+
+  void setTcpKeepAlive(bool on) {
+    connSock_->setKeepAlive(on);
+  }
+
  private:
   // 当前 TCP 连接的状态
   enum StateE {
     kConnecting,
     kConnected,
-    kDisConnecting,
+    kDisConnecting,   // 用于主动断开连接调用shutdown()之后的状态
     kDisConnected
   };
 

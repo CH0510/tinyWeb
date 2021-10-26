@@ -43,3 +43,6 @@ target_link_libraries(EventLoop_test09 tinyWeb_base tinyWeb_net pthread)
 
 add_executable(EventLoop_test10 EventLoop_test10.cc)
 target_link_libraries(EventLoop_test10 tinyWeb_base tinyWeb_net pthread)
+
+add_executable(EventLoop_test11 EventLoop_test11.cc)
+target_link_libraries(EventLoop_test11 tinyWeb_base tinyWeb_net pthread)
