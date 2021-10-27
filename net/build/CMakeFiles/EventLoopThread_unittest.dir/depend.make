@@ -6,11 +6,15 @@ CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/che
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/CountDownLatch.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Thread.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: ../EventLoopThread_unittest.cc
+CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: ../src/Buffer.h
+CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: ../src/Callbacks.h
+CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: ../src/Endian.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: ../src/EventLoop.h
 CMakeFiles/EventLoopThread_unittest.dir/EventLoopThread_unittest.cc.o: ../src/EventLoopThread.h
 

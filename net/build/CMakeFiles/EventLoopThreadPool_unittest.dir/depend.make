@@ -12,6 +12,9 @@ CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: /
 CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../EventLoopThreadPool_unittest.cc
+CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../src/Buffer.h
+CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../src/Callbacks.h
+CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../src/Endian.h
 CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../src/EventLoop.h
 CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../src/EventLoopThread.h
 CMakeFiles/EventLoopThreadPool_unittest.dir/EventLoopThreadPool_unittest.cc.o: ../src/EventLoopThreadPool.h

@@ -8,6 +8,8 @@
 #include <vector>
 #include <functional>
 
+#include <boost/any.hpp>
+
 #include "../../base/src/noncopyable.hpp"
 #include "../../base/src/CurrentThread.h"
 #include "../../base/src/Timestamp.h"
@@ -71,6 +73,12 @@ class EventLoop : public noncopyable {
 
   static EventLoop* getEventLoopOfCurrentThread();
 
+  void setContext(const boost::any& context) {
+    context_ = context;
+  }
+  const boost::any& getContext() const { return context_; }
+  boost::any* getMutableContext() { return &context_; }
+
  private:
   typedef std::vector<Channel*> ChannelList;
 
@@ -96,6 +104,8 @@ class EventLoop : public noncopyable {
   MutexLock mutex_;
   bool callingPendingFunc_;
   std::vector<PendingFunctor> pendingFunctors_;  // Guard by mutex_
+
+  boost::any context_;
 };
 
 }   // namespace net

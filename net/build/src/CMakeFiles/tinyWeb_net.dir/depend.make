@@ -86,11 +86,15 @@ src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/CountDownLatch.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Thread.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/ThreadLocal.hpp
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/Buffer.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/Callbacks.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/Endian.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoop.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoopThread.cc
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThread.cc.o: ../src/EventLoopThread.h
@@ -105,6 +109,9 @@ src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: /home/chenhao/tinyWeb/b
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: ../src/Buffer.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: ../src/Callbacks.h
+src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: ../src/Endian.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: ../src/EventLoop.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: ../src/EventLoopThread.h
 src/CMakeFiles/tinyWeb_net.dir/EventLoopThreadPool.cc.o: ../src/EventLoopThreadPool.cc

@@ -8,6 +8,7 @@
 #include "EventLoopThread.h"
 #include "EventLoop.h"
 #include "../../base/src/StringPiece.hpp"
+#include "Callbacks.h"
 
 namespace tinyWeb {
 namespace net {
@@ -32,7 +33,7 @@ class EventLoopThreadPool : public noncopyable {
   // numThreads_(0) : 没有专门的 IO 线程，监听套接字与通信套接字共享一个 EventLoop
   // numThreads_(1) : 监听套接字在 baseLoop_ 中，通信套接字在另一个 EventLoop 中
   // numThreads_(N) : 监听套接字在 baseLoop_ 中，通信套接字均匀的分布在 N 个 IO EventLoopThread 中
-  void start();
+  void start(const ThreadInitCallback& cb = ThreadInitCallback());
 
   // 选取处理 TCP 连接的 IO Thread
   // 目前实现的是 Round-Robin 算法

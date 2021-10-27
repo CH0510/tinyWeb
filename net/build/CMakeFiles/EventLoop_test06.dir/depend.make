@@ -6,11 +6,15 @@ CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/bas
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/CountDownLatch.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/Thread.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../EventLoop_test06.cc
+CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../src/Buffer.h
+CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../src/Callbacks.h
+CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../src/Endian.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../src/EventLoop.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../src/EventLoopThread.h
 CMakeFiles/EventLoop_test06.dir/EventLoop_test06.cc.o: ../src/TimerId.h

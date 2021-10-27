@@ -5,6 +5,7 @@
 #include "../../base/src/noncopyable.hpp"
 #include "../../base/src/Thread.h"
 #include "../../base/src/CountDownLatch.h"
+#include "Callbacks.h"
 
 namespace tinyWeb {
 namespace net {
@@ -13,7 +14,8 @@ class EventLoop;
 // 创建一个IO子线程,即one loop per thread
 class EventLoopThread : public noncopyable {
  public:
-  EventLoopThread(const std::string& name = "");
+  EventLoopThread(const ThreadInitCallback& callback = ThreadInitCallback(), \
+                  const std::string& name = "");
   ~EventLoopThread();
   // 创建子线程并返回在子线程中运行的EventLoop对象
   // 例：
@@ -40,12 +42,17 @@ class EventLoopThread : public noncopyable {
     return loopThread_.name();
   }
 
+  void setThreadInitCallback(const ThreadInitCallback& callback) {
+    callback_ = callback;
+  };
+
  private:
   void threadFunc();
 
   Thread loopThread_;
   CountDownLatch latch_;
   EventLoop* loop_;
+  ThreadInitCallback callback_;
 };
 }  // namespace net
 }  // namespace tinyWeb

@@ -12,7 +12,7 @@ EventLoopThreadPool::EventLoopThreadPool(EventLoop* baseLoop, \
     next_(0) {
 }
 
-void EventLoopThreadPool::start() {
+void EventLoopThreadPool::start(const ThreadInitCallback& cb) {
   assert(started_ == false);
   baseLoop_->assertInLoopThread();
 
@@ -21,7 +21,7 @@ void EventLoopThreadPool::start() {
 
   for (int i = 0; i < static_cast<int>(numThreads_); ++i) {
     std::string threadName = name_ + std::to_string(i);
-    threads_.emplace_back(new EventLoopThread(threadName));
+    threads_.emplace_back(new EventLoopThread(cb, threadName));
     loops_.push_back(threads_[i]->startInLoop());
   }
   started_ = true;
