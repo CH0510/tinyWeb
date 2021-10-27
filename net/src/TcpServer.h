@@ -12,6 +12,7 @@
 #include "Callbacks.h"
 #include "../../base/src/Atomic.hpp"
 #include "TcpConnection.h"
+#include "EventLoopThreadPool.h"
 
 namespace tinyWeb {
 namespace net {
@@ -43,6 +44,12 @@ class TcpServer : public noncopyable {
     writeCompleteCallback_ = writeCompleteCallback;
   }
 
+  // 设置 IO Thread 的数量，须在调用 start() 前调用
+  void setThreadNum(size_t numThreads) {
+    assert(started_.get() == 0);
+    ioThreadPool_->setThreadNum(numThreads);
+  }
+
   // 启动服务器，线程安全，且可以多次调用
   // 函数会启动内部的监听套接字
   void start();
@@ -58,10 +65,12 @@ class TcpServer : public noncopyable {
   // 进而调用该函数将链接从TcpServer中移除，
   // 完成这些操作后，其会调用 TcpConnection::connectionDestroy()做收尾工作
   void removeConnection(const TcpConnectionPtr &conn);
+  void removeConnectionInLoop(const TcpConnectionPtr &conn);
 
-  EventLoop* ownerLoop_;
+  EventLoop* baseLoop_;
   const std::string name_;  // 服务器的名称
   std::unique_ptr<Acceptor> acceptor_;  // 服务器接收新连接的监听套接字
+  std::unique_ptr<EventLoopThreadPool> ioThreadPool_;
   //bool started_;  // 无法满足原子性的要求
   AtomicInt32 started_;
   uint64_t nextConn_;  // 客户端的序列号

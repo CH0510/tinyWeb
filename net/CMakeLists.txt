@@ -49,3 +49,15 @@ target_link_libraries(EventLoop_test11 tinyWeb_base tinyWeb_net pthread)
 
 add_executable(EventLoop_test12 EventLoop_test12.cc)
 target_link_libraries(EventLoop_test12 tinyWeb_base tinyWeb_net pthread)
+
+add_executable(EventLoop_test13 EventLoop_test13.cc)
+target_link_libraries(EventLoop_test13 tinyWeb_base tinyWeb_net pthread)
+
+add_executable(EventLoopThread_unittest EventLoopThread_unittest.cc)
+target_link_libraries(EventLoopThread_unittest tinyWeb_base tinyWeb_net pthread boost_unit_test_framework)
+
+add_executable(EventLoopThreadPool_unittest EventLoopThreadPool_unittest.cc)
+target_link_libraries(EventLoopThreadPool_unittest tinyWeb_base tinyWeb_net pthread boost_unit_test_framework)
+
+add_executable(TimerQueue_unittest TimerQueue_unittest.cc)
+target_link_libraries(TimerQueue_unittest tinyWeb_base tinyWeb_net pthread boost_unit_test_framework)

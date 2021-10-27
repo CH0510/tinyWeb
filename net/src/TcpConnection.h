@@ -40,6 +40,8 @@ class TcpConnection : public noncopyable, \
 
   std::string name() const { return name_; }
 
+  EventLoop* getLoop() const { return ownerLoop_; }
+
   bool isReading() const { return reading_; }
 
   void setContext(const boost::any& context) {
