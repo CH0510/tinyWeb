@@ -61,7 +61,8 @@ void EPollPoller::updateChannel(Channel* channel) {
   LOG_DEBUG << "fd = " << fd << " event = " \
             << channel->eventToString() \
             << " index = " << index;
-  if (index == kNew || index == kDeleted) {
+  if (index == kNew || \
+      index == kDeleted) {
     // a new one
     if (index == kNew) {
       assert(channels_.find(fd) == channels_.end());

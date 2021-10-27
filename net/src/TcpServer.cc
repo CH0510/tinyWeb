@@ -32,8 +32,9 @@ namespace detail {
 TcpServer::TcpServer(EventLoop* loop, \
           const InetAddress& listenAddr, \
           const std::string& name) \
-  : ownerLoop_(loop), name_(name), \
+  : baseLoop_(loop), name_(name), \
     acceptor_(new Acceptor(loop, listenAddr)), \
+    ioThreadPool_(new EventLoopThreadPool(baseLoop_, name)), \
     nextConn_(0) {
   acceptor_->setNewConnectionCallback( \
       std::bind(&TcpServer::newConnection, this, \
@@ -47,17 +48,18 @@ void TcpServer::start() {
   /*
   if (started_ == false) {
     started_ = true;
-    ownerLoop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
+    baseLoop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
   }
   */
  // 上述对于started_的操作不是原子性的，存在 race condition
- if (started_.getAndSet(1) == false) {
-   ownerLoop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
+ if (started_.getAndSet(1) == 0) {
+   ioThreadPool_->start();
+   baseLoop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
  }
 }
 
 void TcpServer::newConnection(int connFd, const InetAddress& peerAddr) {
-  ownerLoop_->assertInLoopThread();
+  baseLoop_->assertInLoopThread();
   char buf[32] = {0};
   snprintf(buf, sizeof buf, ":%ld", ++nextConn_);
   std::string connName = name_ + buf;
@@ -65,9 +67,10 @@ void TcpServer::newConnection(int connFd, const InetAddress& peerAddr) {
   LOG_INFO << "TcpServer::newConnection: [" << name_ \
            << "] - new connection [" << connName \
            << "] from " << peerAddr.toIpPort();
-  // 创建一个 TcpConnection 来管理新的连接
+  // 创建一个 TcpConnection 来管理新的连接，并交由一个 IO 线程来处理
+  EventLoop* ioLoop = ioThreadPool_->getNextLoop();
   TcpConnectionPtr conn(new TcpConnection( \
-          ownerLoop_, connName, connFd, sockets::getLocalAddr(connFd), peerAddr));
+          ioLoop, connName, connFd, sockets::getLocalAddr(connFd), peerAddr));
   conn->setConnectionCallback(connectionCallback_);
   conn->setMessageCallback(messageCallback_);
   conn->setWriteCompleteCallback(writeCompleteCallback_);
@@ -79,21 +82,35 @@ void TcpServer::newConnection(int connFd, const InetAddress& peerAddr) {
   // 对 TcpConnection 完成所有的初始化之后，
   // 调用 TcpConnection::connectEstablished() 
   // 启动链接描述符上的监听事件并调用用户的回调
-  conn->connectEstablished();
+  ioLoop->runInLoop(std::bind(&TcpConnection::connectEstablished, conn));
 }
 
 void TcpServer::removeConnection(const TcpConnectionPtr &conn) {
-  ownerLoop_->assertInLoopThread();
+  // conn 一般会在自己的 ioLoop 线程中调用 removeConnection
+  // 而 TcpServer 的 connection 是没有加锁的，因此要转移到
+  // TcpServer 的 baseLoop_ 线程执行
+  baseLoop_->runInLoop(std::bind( \
+                        &TcpServer::removeConnectionInLoop, \
+                        this, \
+                        conn));
+}
+
+void TcpServer::removeConnectionInLoop(const TcpConnectionPtr &conn) {
+  baseLoop_->assertInLoopThread();
   assert(connections_.find(conn->name()) != connections_.end());
   LOG_INFO << "TcpServer::removeConnection() [" << name_ \
            <<  "] - connection " << conn->name();
   // erase 后引用计数变为1，只剩下函数参数传递进来的的 conn
   size_t n = connections_.erase(conn->name());
   assert(n == 1); (void) n;
+
+  EventLoop* ioLoop = conn->getLoop();
+  // TcpConnection::connectDestroy() 应在 conn 所属的 ioLoop 线程中执行
   // 在此处bind是值语义，所以会拷贝一份，使得引用计数变为2
-  ownerLoop_->queueInLoop(std::bind( \
+  ioLoop->queueInLoop(std::bind( \
                           &TcpConnection::connectDestroyed, conn));
 }
+
 
 }  // namespace net
 }  // namespace tinyWeb

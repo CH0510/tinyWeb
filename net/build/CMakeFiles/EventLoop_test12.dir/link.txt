@@ -1,0 +1,1 @@
+g++  -g -O2 -Wall -Werror  -rdynamic CMakeFiles/EventLoop_test12.dir/EventLoop_test12.cc.o  -o bin/EventLoop_test12   -L/home/chenhao/tinyWeb/net/../base/lib  -L/home/chenhao/tinyWeb/net/./lib  -Wl,-rpath,/home/chenhao/tinyWeb/net/../base/lib:/home/chenhao/tinyWeb/net/./lib -ltinyWeb_base ../lib/libtinyWeb_net.a -lpthread -ltinyWeb_base 

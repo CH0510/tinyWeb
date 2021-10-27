@@ -3,6 +3,8 @@
 #include <memory>
 #include <string>
 
+#include <boost/any.hpp>
+
 #include "../../base/src/noncopyable.hpp"
 #include "EventLoop.h"
 #include "Channel.h"
@@ -38,22 +40,41 @@ class TcpConnection : public noncopyable, \
 
   std::string name() const { return name_; }
 
+  EventLoop* getLoop() const { return ownerLoop_; }
+
+  bool isReading() const { return reading_; }
+
+  void setContext(const boost::any& context) {
+    context_ = context;
+  }
+
+  const boost::any& getContext() const { return context_; }
+
+  boost::any* getMutableContext() { return &context_; }
+
   // 绑定链接到来的用户回调函数
-  void setConnectionCallback(ConnectionCallback connectionCallback) {
+  void setConnectionCallback(const ConnectionCallback& connectionCallback) {
     connectionCallback_ = connectionCallback;
     assert(connectionCallback);
   }
   // 绑定消息到来的用户回调函数
-  void setMessageCallback(MessageCallback messageCallback) {
+  void setMessageCallback(const MessageCallback& messageCallback) {
     messageCallback_ = messageCallback;
   }
   // 绑定消息发送完毕的用户回调函数
-  void setWriteCompleteCallback(WriteCompleteCallback writeCompleteCallback) {
+  void setWriteCompleteCallback(const WriteCompleteCallback& writeCompleteCallback) {
     writeCompleteCallback_ = writeCompleteCallback;
   }
   // 仅由类 TcpServer 调用，客户不能调用该函数
-  void setCloseCallback(CloseCallback closeCallback) {
+  void setCloseCallback(const CloseCallback& closeCallback) {
     closeCallback_ = closeCallback;
+  }
+
+  // 设置高水位回调函数
+  void setHighWaterMarkCallback(const HighWaterMarkCallback& highWaterMarkCallback, \
+                                size_t highWaterMark) {
+    highWaterMarkCallback_ = highWaterMarkCallback;
+    highWaterMark_ = highWaterMark;
   }
   
   InetAddress localAddress() const { return localAddress_; }
@@ -79,7 +100,7 @@ class TcpConnection : public noncopyable, \
     //  ownerLoop_->runInLoop(std::bind( 
     //                        &TcpConnection::shutdownInLoop, this));
     //}
-    if (__atomic_exchange_n(&state_, kDisConnecting, __ATOMIC_SEQ_CST)) {
+    if (__atomic_exchange_n(&state_, kDisConnecting, __ATOMIC_SEQ_CST) == kConnected) {
       ownerLoop_->runInLoop(std::bind( \
                             &TcpConnection::shutdownInLoop, this));
     }
@@ -92,12 +113,28 @@ class TcpConnection : public noncopyable, \
   void send(const StringPiece& str);
   void send(Buffer* buf);
 
+  void setTcpNoDelay(bool on) {
+    connSock_->setTcpNoDelay(on);
+  }
+
+  void setTcpKeepAlive(bool on) {
+    connSock_->setKeepAlive(on);
+  }
+
+  // 强制关闭TCP连接，不管是否还有数据未发送完毕
+  void forceClose();
+  void forceCloseWithDelay(double seconds);
+
+  // 线程安全的
+  void startReading();
+  void stopReading();
+
  private:
   // 当前 TCP 连接的状态
   enum StateE {
     kConnecting,
     kConnected,
-    kDisConnecting,
+    kDisConnecting,   // 用于主动断开连接调用shutdown()之后的状态
     kDisConnected
   };
 
@@ -124,6 +161,11 @@ class TcpConnection : public noncopyable, \
     sendInLoop(str.data(), str.size());
   }
 
+  // 强制关闭 TCP 链接
+  // 只能在所属 IO 线程中调用，所以是线程安全的
+  void forceCloseInLoop();
+
+
   EventLoop* ownerLoop_;
   const std::string name_;  // 连接名称（服务器的名称 + 序列号）
   StateE state_;   // 连接的状态
@@ -142,6 +184,12 @@ class TcpConnection : public noncopyable, \
   // 当 TcpConnection 所管理的连接关闭时，会调用此回调，
   // 用于删除 TcpConnection
   CloseCallback closeCallback_;
+  size_t highWaterMark_;
+  HighWaterMarkCallback highWaterMarkCallback_;
+
+  bool reading_;  // 当前是否处于监听读事件的状态
+
+  boost::any context_;  // 可以用于绑定与该TCP相关联的数据
 };
 
 }  // namespace net

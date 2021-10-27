@@ -11,6 +11,7 @@ Poller* Poller::newDefaultPoller(EventLoop* loop) {
   } else {
     return new EPollPoller(loop);
   }
+  return new PollPoller(loop);
 }
 }
 }  // namespace tinyWeb
