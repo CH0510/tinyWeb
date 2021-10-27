@@ -10,6 +10,9 @@ namespace tinyWeb {
 namespace net {
 
 class TcpConnection;
+class EventLoop;
+
+typedef std::function<void(EventLoop*)> ThreadInitCallback;
 
 typedef std::shared_ptr<TcpConnection> TcpConnectionPtr;
 typedef std::function<void(const TcpConnectionPtr&)> ConnectionCallback;

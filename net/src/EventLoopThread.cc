@@ -8,10 +8,12 @@
 namespace tinyWeb {
 namespace net {
 
-  EventLoopThread::EventLoopThread(const std::string& name) \
+  EventLoopThread::EventLoopThread(const ThreadInitCallback& callback, \
+                                   const std::string& name) \
     : loopThread_(std::bind(&EventLoopThread::threadFunc, this), name), \
       latch_(1), \
-      loop_(NULL) {
+      loop_(NULL), \
+      callback_(callback) {
   }
 
   // 这里实现了析构函数，在EventLoopThread对象销毁的时候销毁IO子线程，
@@ -34,6 +36,10 @@ namespace net {
 
   void EventLoopThread::threadFunc() {
     EventLoop loop;
+    if (callback_) {
+      callback_(&loop);
+    }
+
     loop_ = &loop;
     latch_.countDown();
     loop.loop();

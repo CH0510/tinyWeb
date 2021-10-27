@@ -6,11 +6,15 @@ CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyW
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/CountDownLatch.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/CurrentThread.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/MutexLock.hpp
+CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/StringPiece.hpp
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Thread.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Timestamp.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/Types.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: /home/chenhao/tinyWeb/base/src/noncopyable.hpp
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../TimerQueue_unittest.cc
+CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../src/Buffer.h
+CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../src/Callbacks.h
+CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../src/Endian.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../src/EventLoop.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../src/EventLoopThread.h
 CMakeFiles/TimerQueue_unittest.dir/TimerQueue_unittest.cc.o: ../src/TimerId.h
