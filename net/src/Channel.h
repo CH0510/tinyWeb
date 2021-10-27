@@ -52,12 +52,17 @@ class Channel : public noncopyable {
   }
 
   void enableReading() {
-    event_ |= kReadEvent;
-    update();
+    if ((event_ & kReadEvent) == 0) {
+      event_ |= kReadEvent;
+      update();
+    }
   }
 
   void disableReading() {
-    event_ &= ~kReadEvent;
+    if (event_ & kReadEvent) {
+      event_ &= ~kReadEvent;
+      update();
+    }
   }
 
   bool isReading() const {
@@ -65,13 +70,17 @@ class Channel : public noncopyable {
   }
 
   void enableWriting() {
-    event_ |= kWriteEvent;
-    update();
+    if ((event_ & kWriteEvent) == 0) {
+      event_ |= kWriteEvent;
+      update();
+    }
   }
 
   void disableWriting() {
-    event_ &= ~kWriteEvent;
-    update();
+    if (event_ & kWriteEvent) {
+      event_ &= ~kWriteEvent;
+      update();
+    }
   }
   
   bool isWriting() const {
@@ -79,8 +88,11 @@ class Channel : public noncopyable {
   }
 
   void disableAll() {
-    event_ = 0;
-    update();
+    // 防止重复调用
+    if (event_ != 0) {
+      event_ = 0;
+      update();
+    }
   }
 
   bool isNoneEvent() const {

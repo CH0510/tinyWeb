@@ -150,6 +150,19 @@ EventLoop_test06/fast:
 .PHONY : EventLoop_test06/fast
 
 #=============================================================================
+# Target rules for targets named EventLoop_test12
+
+# Build rule for target.
+EventLoop_test12: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test12
+.PHONY : EventLoop_test12
+
+# fast build rule for target.
+EventLoop_test12/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test12.dir/build.make CMakeFiles/EventLoop_test12.dir/build
+.PHONY : EventLoop_test12/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test03
 
 # Build rule for target.
@@ -576,6 +589,33 @@ EventLoop_test11.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test11.dir/build.make CMakeFiles/EventLoop_test11.dir/EventLoop_test11.cc.s
 .PHONY : EventLoop_test11.cc.s
 
+EventLoop_test12.o: EventLoop_test12.cc.o
+
+.PHONY : EventLoop_test12.o
+
+# target to build an object file
+EventLoop_test12.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test12.dir/build.make CMakeFiles/EventLoop_test12.dir/EventLoop_test12.cc.o
+.PHONY : EventLoop_test12.cc.o
+
+EventLoop_test12.i: EventLoop_test12.cc.i
+
+.PHONY : EventLoop_test12.i
+
+# target to preprocess a source file
+EventLoop_test12.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test12.dir/build.make CMakeFiles/EventLoop_test12.dir/EventLoop_test12.cc.i
+.PHONY : EventLoop_test12.cc.i
+
+EventLoop_test12.s: EventLoop_test12.cc.s
+
+.PHONY : EventLoop_test12.s
+
+# target to generate assembly for a file
+EventLoop_test12.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test12.dir/build.make CMakeFiles/EventLoop_test12.dir/EventLoop_test12.cc.s
+.PHONY : EventLoop_test12.cc.s
+
 InetAddress_unittest.o: InetAddress_unittest.cc.o
 
 .PHONY : InetAddress_unittest.o
@@ -609,11 +649,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... EventLoop_test01"
 	@echo "... EventLoop_test02"
 	@echo "... EventLoop_test06"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
+	@echo "... EventLoop_test12"
 	@echo "... EventLoop_test03"
 	@echo "... EventLoop_test04"
 	@echo "... InetAddress_unittest"
@@ -657,6 +698,9 @@ help:
 	@echo "... EventLoop_test11.o"
 	@echo "... EventLoop_test11.i"
 	@echo "... EventLoop_test11.s"
+	@echo "... EventLoop_test12.o"
+	@echo "... EventLoop_test12.i"
+	@echo "... EventLoop_test12.s"
 	@echo "... InetAddress_unittest.o"
 	@echo "... InetAddress_unittest.i"
 	@echo "... InetAddress_unittest.s"

@@ -2,6 +2,7 @@
 
 #include <unistd.h>
 #include "../../base/src/Logging.h"
+#include "TimerId.h"
 
 
 namespace tinyWeb {
@@ -18,7 +19,9 @@ TcpConnection::TcpConnection(EventLoop* loop, \
     connSock_(new Socket(connfd)), \
     connChannel_(new Channel(loop, connfd)), \
     localAddress_(localAddr), \
-    peerAddress_(peerAddr) {
+    peerAddress_(peerAddr), \
+    highWaterMark_(64 * 1024 * 1024), \
+    reading_(false) {
   // connSock_ 上发生时间时，会调用相应回调
   connChannel_->setReadCallback(std::bind( \
                      &TcpConnection::handleRead, this, std::placeholders::_1));
@@ -41,6 +44,7 @@ void TcpConnection::connectEstablished() {
   assert(state_ == kConnecting);
   setState(kConnected);
   connChannel_->enableReading();
+  reading_ = true;
   // 由于采用的是 epoll 的水平触发模式，此时开启
   // 会导致 busy loop
   // connChannel_->enableWriting();
@@ -69,6 +73,8 @@ std::string TcpConnection::stateToString() {
       return "kConnecting";
     case kConnected:
       return "kConnected";
+    case kDisConnecting:
+      return "kDisConnecting";
     default:
       return "unknown state";
   }
@@ -76,6 +82,7 @@ std::string TcpConnection::stateToString() {
 
 void TcpConnection::handleRead(Timestamp receiveTime) {
   ownerLoop_->assertInLoopThread();
+  assert(reading_);
   int saveErrno = 0;
   ssize_t len = inputBuffer_.readFd(connSock_->fd(), &saveErrno);
   if (len > 0) {
@@ -136,6 +143,7 @@ void TcpConnection::handleClose() {
 
 void TcpConnection::handleError() {
   ownerLoop_->assertInLoopThread();
+  assert(reading_);
   int err = sockets::getSocketError(connSock_->fd());
   char buf[128] = {0};
   LOG_ERROR << "TcpConnection::handleError [" << name_ \
@@ -222,10 +230,80 @@ void TcpConnection::sendInLoop(const char* data, size_t len) {
   // 2. 原本发送缓冲区仍存在未发送数据
   // 将数据追加到发送缓冲区并开启写事件监听
   if (!faultError && remaining > 0) {
+    size_t oldLen = outputBuffer_.readableBytes();
+    if (oldLen + remaining >= highWaterMark_ && \
+        oldLen < highWaterMark_ && \
+        highWaterMarkCallback_) {
+      ownerLoop_->queueInLoop(std::bind( \
+                              highWaterMarkCallback_, \
+                              shared_from_this(), \
+                              oldLen + remaining));
+    }
+
     outputBuffer_.append(data + nwriten, remaining);
     if (!connChannel_->isWriting()) {
       connChannel_->enableWriting();
     }
+  }
+}
+
+void TcpConnection::forceClose() {
+  // 非线程安全的，只能将forceCloseInLoop()加入 IO 对应的线程以保证安全性
+  if (state_ == kConnected || state_ == kDisConnecting) {
+    setState(kDisConnecting);
+    ownerLoop_->queueInLoop(std::bind( \
+                            &TcpConnection::forceCloseInLoop, \
+                            shared_from_this()));
+  }
+}
+
+
+void TcpConnection::forceCloseWithDelay(double seconds) {
+  if (state_ == kConnected || state_ == kDisConnecting) {
+    setState(kDisConnecting);
+    // 调用 forceClose() 而不是 forceCloseInLoop() 保证线程安全性
+    TimerId id = ownerLoop_->runAfter(std::bind( \
+                         &TcpConnection::forceClose, \
+                         shared_from_this()), \
+                         seconds);
+    (void)id;
+  }
+}
+
+void TcpConnection::forceCloseInLoop() {
+  ownerLoop_->assertInLoopThread();
+  // 该函数只会运行在 IO 线程中，所以是线程安全的
+  if (state_ == kConnected|| state_ == kDisConnecting) {
+    assert(state_ != kDisConnected);
+    handleClose();
+  }
+}
+
+void TcpConnection::startReading() {
+  // 使用原子操作获得线程安全性
+  bool expected = false;
+  if (__atomic_compare_exchange_n(&reading_, \
+                                &expected, \
+                                true, \
+                                true, \
+                                __ATOMIC_SEQ_CST, \
+                                __ATOMIC_SEQ_CST)) {
+    assert(!connChannel_->isReading());
+    connChannel_->enableReading();
+  }
+}
+
+void TcpConnection::stopReading() {
+  // 使用原子操作获得线程安全性
+  bool expected = true;
+  if(__atomic_compare_exchange_n(&reading_, \
+                                 &expected, \
+                                 false, \
+                                 true, \
+                                 __ATOMIC_SEQ_CST, \
+                                 __ATOMIC_SEQ_CST)) {
+    assert(connChannel_->isReading());
+    connChannel_->disableReading();
   }
 }
 
